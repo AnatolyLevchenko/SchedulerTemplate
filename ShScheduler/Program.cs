@@ -15,8 +15,9 @@ namespace ShScheduler
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            log4net.Config.XmlConfigurator.Configure();
 
-             InitDbIfRequired();
+            InitDbIfRequired();
 
             Application.Run(new Form1());
         }
@@ -26,6 +27,7 @@ namespace ShScheduler
             if (!File.Exists("scheduler.db"))
             {
                 DataAccess.CreateSchema(File.ReadAllText("Schema.sql"));
+                Logger.LogInfo("Database was created");
             }
         }
     }
