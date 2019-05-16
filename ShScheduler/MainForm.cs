@@ -44,6 +44,7 @@ namespace ShScheduler
             olvJobs.SetObjects(jobs);
 
             var triggers = Singleton.Instance.Scheduler.GetAllTriggers();
+            //triggers[0].
             olvTriggers.SetObjects(triggers);
 
         }

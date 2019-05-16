@@ -1,4 +1,5 @@
 ﻿using System.Threading.Tasks;
+using System.Windows.Forms;
 using Quartz;
 
 namespace ShScheduler.Scheduler
@@ -7,9 +8,7 @@ namespace ShScheduler.Scheduler
     {
         public  void Execute(IJobExecutionContext context)
         {
-          //Logger.LogInfo(context.);
-
-            // Task.Delay(100);
+            MessageBox.Show("invo");
         }
     }
 }

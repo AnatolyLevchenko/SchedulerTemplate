@@ -29,6 +29,7 @@ namespace ShScheduler
                 .WithIdentity(txtTriggerName.Text, "triggers")
                 .WithCronSchedule(txtCronValue.Text)
                 .ForJob(job.Key, job.Group)
+                .StartNow()
                 .Build();
             Singleton.Instance.Scheduler.ScheduleJob(trigger);
             this.Dispose();

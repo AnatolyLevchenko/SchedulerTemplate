@@ -50,10 +50,16 @@ namespace ShScheduler.Scheduler
                 var triggerdetails = scheduler.GetTrigger(triggerKey);
                 var Jobdetails = scheduler.GetJobDetail(triggerdetails.JobKey);
 
+
                 TriggerInfo ti=new TriggerInfo();
                 ti.TriggerKey = triggerdetails.Key.Name;
                 ti.JobName = triggerdetails.JobKey.Name;
-             
+
+                var date = triggerdetails.GetNextFireTimeUtc()?.DateTime;
+                if (date.HasValue)
+                    ti.NextFireTimeUTC = date.Value.ToLocalTime().ToString();
+
+
 
                 tr.Add(ti);
 

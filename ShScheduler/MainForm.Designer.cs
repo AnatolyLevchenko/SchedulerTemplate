@@ -35,10 +35,12 @@
             this.btnAddJob = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.olvTriggers = new BrightIdeasSoftware.ObjectListView();
+            this.olvTriggerKey = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddTrigger = new System.Windows.Forms.Button();
-            this.olvTriggerKey = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvJobName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvNextFire = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvJobs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).BeginInit();
             this.SuspendLayout();
@@ -109,16 +111,28 @@
             // olvTriggers
             // 
             this.olvTriggers.AllColumns.Add(this.olvTriggerKey);
+            this.olvTriggers.AllColumns.Add(this.olvJobName);
+            this.olvTriggers.AllColumns.Add(this.olvNextFire);
             this.olvTriggers.CellEditUseWholeCell = false;
             this.olvTriggers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvTriggerKey});
+            this.olvTriggerKey,
+            this.olvJobName,
+            this.olvNextFire});
             this.olvTriggers.Cursor = System.Windows.Forms.Cursors.Default;
+            this.olvTriggers.FullRowSelect = true;
             this.olvTriggers.Location = new System.Drawing.Point(13, 185);
             this.olvTriggers.Name = "olvTriggers";
+            this.olvTriggers.ShowGroups = false;
             this.olvTriggers.Size = new System.Drawing.Size(600, 97);
             this.olvTriggers.TabIndex = 4;
             this.olvTriggers.UseCompatibleStateImageBehavior = false;
             this.olvTriggers.View = System.Windows.Forms.View.Details;
+            // 
+            // olvTriggerKey
+            // 
+            this.olvTriggerKey.AspectName = "TriggerKey";
+            this.olvTriggerKey.Text = "Trigger";
+            this.olvTriggerKey.Width = 88;
             // 
             // label1
             // 
@@ -148,10 +162,18 @@
             this.btnAddTrigger.UseVisualStyleBackColor = true;
             this.btnAddTrigger.Click += new System.EventHandler(this.btnAddTrigger_Click);
             // 
-            // olvTriggerKey
+            // olvJobName
             // 
-            this.olvTriggerKey.AspectName = "TriggerKey";
-            this.olvTriggerKey.Text = "Trigger";
+            this.olvJobName.AspectName = "JobName";
+            this.olvJobName.Text = "Job";
+            this.olvJobName.Width = 93;
+            // 
+            // olvNextFire
+            // 
+            this.olvNextFire.AspectName = "NextFireTimeUTC";
+            this.olvNextFire.FillsFreeSpace = true;
+            this.olvNextFire.Text = "Next Fire Time";
+            this.olvNextFire.Width = 274;
             // 
             // MainForm
             // 
@@ -186,6 +208,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddTrigger;
         private BrightIdeasSoftware.OLVColumn olvTriggerKey;
+        private BrightIdeasSoftware.OLVColumn olvJobName;
+        private BrightIdeasSoftware.OLVColumn olvNextFire;
     }
 }
 
