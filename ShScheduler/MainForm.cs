@@ -22,39 +22,10 @@ namespace ShScheduler
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            FillGrids();
             _ucJobs1.BringToFront();
             _ucTriggers1.Visible = false;
+            ChangeBackColor(btnShowJobs);
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-        private void btnAddJob_Click(object sender, EventArgs e)
-        {
-            new AddJob().ShowDialog();
-            FillGrids();
-        }
-
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-        
-            FillGrids();
-        }
-
-        void FillGrids()
-        {
-            var jobs = Singleton.Instance.Scheduler.GetJobs();
-            //olvJobs.SetObjects(jobs);
-
-            var triggers = Singleton.Instance.Scheduler.GetAllTriggers();
-            //triggers[0].
-           // olvTriggers.SetObjects(triggers);
-
-        }
-
 
         protected override void Dispose(bool disposing)
         {
@@ -66,20 +37,12 @@ namespace ShScheduler
             base.Dispose(disposing);
         }
 
-        private void btnAddTrigger_Click(object sender, EventArgs e)
-        {
-            new AddTrigger().ShowDialog();
-        }
-
-       
-
-        
-
         private void btnShowJobs_Click(object sender, EventArgs e)
         {
             _ucJobs1.Visible = true;
             _ucJobs1.BringToFront();
             _ucTriggers1.Visible = false;
+            ChangeBackColor(sender);
         }
 
         private void btnShowTriggers_Click(object sender, EventArgs e)
@@ -87,6 +50,21 @@ namespace ShScheduler
             _ucTriggers1.BringToFront();
             _ucJobs1.Visible = false;
             _ucTriggers1.Visible = true;
+
+            ChangeBackColor(sender);
+        }
+
+        void ChangeBackColor(object sender)
+        {
+            if (sender is Button bt)
+            {
+                var buttons = this.panel1.Controls.OfType<Button>();
+                foreach (var button in buttons)
+                {
+                    button.BackColor = bt==button ? Color.DarkOrange : Color.Khaki;
+                }
+            }
+
         }
     }
 }
