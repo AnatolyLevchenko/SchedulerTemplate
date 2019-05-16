@@ -29,18 +29,26 @@ namespace ShScheduler
         private void btnAddJob_Click(object sender, EventArgs e)
         {
             new AddJob().ShowDialog();
-            var jobs = Singleton.Instance.Scheduler.GetJobs();
-
-            olvJobs.SetObjects(jobs);
+            FillGrids();
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-          var jobs= Singleton.Instance.Scheduler.GetJobs();
+        
+            FillGrids();
+        }
 
-          olvJobs.SetObjects(jobs);
+        void FillGrids()
+        {
+            var jobs = Singleton.Instance.Scheduler.GetJobs();
+            olvJobs.SetObjects(jobs);
+
+            var triggers = Singleton.Instance.Scheduler.GetAllTriggers();
+            olvTriggers.SetObjects(triggers);
 
         }
+
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -49,6 +57,11 @@ namespace ShScheduler
             }
            
             base.Dispose(disposing);
+        }
+
+        private void btnAddTrigger_Click(object sender, EventArgs e)
+        {
+            new AddTrigger().ShowDialog();
         }
     }
 }

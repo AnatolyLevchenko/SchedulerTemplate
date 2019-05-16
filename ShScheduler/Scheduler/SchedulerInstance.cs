@@ -4,6 +4,7 @@ using System.Configuration;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Impl.Matchers;
+using ShScheduler.ViewModels;
 
 namespace ShScheduler.Scheduler
 {
@@ -37,6 +38,29 @@ namespace ShScheduler.Scheduler
             }
 
             return jobs;
+        }
+
+        public static List<TriggerInfo> GetAllTriggers(this IScheduler scheduler)
+        {
+            List<TriggerInfo> tr=new List<TriggerInfo>();
+
+            var allTriggerKeys = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup());
+            foreach (var triggerKey in allTriggerKeys)
+            {
+                var triggerdetails = scheduler.GetTrigger(triggerKey);
+                var Jobdetails = scheduler.GetJobDetail(triggerdetails.JobKey);
+
+                TriggerInfo ti=new TriggerInfo();
+                ti.TriggerKey = triggerdetails.Key.Name;
+                ti.JobName = triggerdetails.JobKey.Name;
+             
+
+                tr.Add(ti);
+
+               // Console.WriteLine("IsCompleted -" + triggerdetails.IsCompleted + " |  TriggerKey  - " + triggerdetails.Result.Key.Name + " Job key -" + triggerdetails.Result.JobKey.Name);
+            }
+
+            return tr;
         }
     }
     public class Singleton
