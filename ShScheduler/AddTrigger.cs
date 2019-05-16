@@ -34,5 +34,10 @@ namespace ShScheduler
             Singleton.Instance.Scheduler.ScheduleJob(trigger);
             this.Dispose();
         }
+
+        private void btnGenerate_Click(object sender, EventArgs e)
+        {
+            txtCronValue.Text = cronControl1.Value;
+        }
     }
 }

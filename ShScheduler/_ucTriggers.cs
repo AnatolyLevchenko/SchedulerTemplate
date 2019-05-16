@@ -17,7 +17,7 @@ namespace ShScheduler
         {
             InitializeComponent();
 
-            this.VisibleChanged += _ucTriggers_VisibleChanged;
+           // this.VisibleChanged += _ucTriggers_VisibleChanged;
         }
 
         private void _ucTriggers_VisibleChanged(object sender, EventArgs e)

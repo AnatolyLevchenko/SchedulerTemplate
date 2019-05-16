@@ -9,7 +9,7 @@ namespace ShScheduler
         public _ucJobs()
         {
             InitializeComponent();
-            this.VisibleChanged += _ucJobs_VisibleChanged1;
+           // this.VisibleChanged += _ucJobs_VisibleChanged1;
         }
 
         private void _ucJobs_VisibleChanged1(object sender, EventArgs e)
