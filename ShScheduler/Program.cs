@@ -19,7 +19,7 @@ namespace ShScheduler
 
             InitDbIfRequired();
 
-            Application.Run(new LoginForm());
+            Application.Run(new MainForm());
         }
 
         static void InitDbIfRequired()
