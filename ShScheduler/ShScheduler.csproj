@@ -108,6 +108,7 @@
     <None Include="Resources\scheduler.png" />
     <None Include="Resources\off.png" />
     <None Include="Resources\off-img.png" />
+    <None Include="Resources\close.png" />
     <Content Include="Schema.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
