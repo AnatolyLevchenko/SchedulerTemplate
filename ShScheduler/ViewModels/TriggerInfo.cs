@@ -6,5 +6,6 @@
         public bool IsCompleted { get; set; }
         public string TriggerKey { get; set; }
         public string JobName { get; set; }
+        public string State { get; set; }
     }
 }

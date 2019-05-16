@@ -30,5 +30,25 @@ namespace ShScheduler
             Singleton.Instance.Scheduler.AddJob(helloJob,false);
             this.Dispose();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJobName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtJobDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

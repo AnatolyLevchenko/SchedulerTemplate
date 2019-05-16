@@ -98,6 +98,8 @@
             this.Controls.Add(this._ucTriggers1);
             this.Controls.Add(this._ucJobs1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);

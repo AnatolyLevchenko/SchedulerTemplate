@@ -42,6 +42,9 @@ namespace ShScheduler.Scheduler
 
         public static List<TriggerInfo> GetAllTriggers(this IScheduler scheduler)
         {
+
+            
+
             List<TriggerInfo> tr=new List<TriggerInfo>();
 
             var allTriggerKeys = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup());
@@ -51,9 +54,13 @@ namespace ShScheduler.Scheduler
                 var Jobdetails = scheduler.GetJobDetail(triggerdetails.JobKey);
 
 
+                var state= scheduler.GetTriggerState(triggerKey);
+
+
                 TriggerInfo ti=new TriggerInfo();
                 ti.TriggerKey = triggerdetails.Key.Name;
                 ti.JobName = triggerdetails.JobKey.Name;
+                ti.State = state.ToString();
 
                 var date = triggerdetails.GetNextFireTimeUtc()?.DateTime;
                 if (date.HasValue)

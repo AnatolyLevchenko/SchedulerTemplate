@@ -34,6 +34,7 @@
             this.olvJobName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvNextFire = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.olvState = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,11 +52,13 @@
             // 
             this.olvTriggers.AllColumns.Add(this.olvTriggerKey);
             this.olvTriggers.AllColumns.Add(this.olvJobName);
+            this.olvTriggers.AllColumns.Add(this.olvState);
             this.olvTriggers.AllColumns.Add(this.olvNextFire);
             this.olvTriggers.CellEditUseWholeCell = false;
             this.olvTriggers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvTriggerKey,
             this.olvJobName,
+            this.olvState,
             this.olvNextFire});
             this.olvTriggers.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvTriggers.Dock = System.Windows.Forms.DockStyle.Left;
@@ -72,7 +75,7 @@
             // 
             this.olvTriggerKey.AspectName = "TriggerKey";
             this.olvTriggerKey.Text = "Trigger";
-            this.olvTriggerKey.Width = 88;
+            this.olvTriggerKey.Width = 100;
             // 
             // olvJobName
             // 
@@ -97,6 +100,11 @@
             this.btnRefresh.UseVisualStyleBackColor = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
+            // olvState
+            // 
+            this.olvState.AspectName = "State";
+            this.olvState.Text = "State";
+            // 
             // _ucTriggers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +127,6 @@
         private BrightIdeasSoftware.OLVColumn olvJobName;
         private BrightIdeasSoftware.OLVColumn olvNextFire;
         private System.Windows.Forms.Button btnRefresh;
+        private BrightIdeasSoftware.OLVColumn olvState;
     }
 }
