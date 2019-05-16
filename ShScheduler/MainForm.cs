@@ -18,7 +18,13 @@ namespace ShScheduler
         public MainForm()
         {
             InitializeComponent();
-          
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            FillGrids();
+            _ucJobs1.BringToFront();
+            _ucTriggers1.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,11 +47,11 @@ namespace ShScheduler
         void FillGrids()
         {
             var jobs = Singleton.Instance.Scheduler.GetJobs();
-            olvJobs.SetObjects(jobs);
+            //olvJobs.SetObjects(jobs);
 
             var triggers = Singleton.Instance.Scheduler.GetAllTriggers();
             //triggers[0].
-            olvTriggers.SetObjects(triggers);
+           // olvTriggers.SetObjects(triggers);
 
         }
 
@@ -63,6 +69,24 @@ namespace ShScheduler
         private void btnAddTrigger_Click(object sender, EventArgs e)
         {
             new AddTrigger().ShowDialog();
+        }
+
+       
+
+        
+
+        private void btnShowJobs_Click(object sender, EventArgs e)
+        {
+            _ucJobs1.Visible = true;
+            _ucJobs1.BringToFront();
+            _ucTriggers1.Visible = false;
+        }
+
+        private void btnShowTriggers_Click(object sender, EventArgs e)
+        {
+            _ucTriggers1.BringToFront();
+            _ucJobs1.Visible = false;
+            _ucTriggers1.Visible = true;
         }
     }
 }

@@ -28,188 +28,80 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.olvJobs = new BrightIdeasSoftware.ObjectListView();
-            this.olvName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvDescription = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvDurable = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.btnAddJob = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.olvTriggers = new BrightIdeasSoftware.ObjectListView();
-            this.olvTriggerKey = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnAddTrigger = new System.Windows.Forms.Button();
-            this.olvJobName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvNextFire = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            ((System.ComponentModel.ISupportInitialize)(this.olvJobs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnShowJobs = new System.Windows.Forms.Button();
+            this.btnShowTriggers = new System.Windows.Forms.Button();
+            this._ucJobs1 = new ShScheduler._ucJobs();
+            this._ucTriggers1 = new ShScheduler._ucTriggers();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // olvJobs
+            // panel1
             // 
-            this.olvJobs.AllColumns.Add(this.olvName);
-            this.olvJobs.AllColumns.Add(this.olvDescription);
-            this.olvJobs.AllColumns.Add(this.olvDurable);
-            this.olvJobs.CellEditUseWholeCell = false;
-            this.olvJobs.CheckBoxes = true;
-            this.olvJobs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvName,
-            this.olvDescription,
-            this.olvDurable});
-            this.olvJobs.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvJobs.FullRowSelect = true;
-            this.olvJobs.Location = new System.Drawing.Point(13, 32);
-            this.olvJobs.Name = "olvJobs";
-            this.olvJobs.Scrollable = false;
-            this.olvJobs.ShowGroups = false;
-            this.olvJobs.ShowItemToolTips = true;
-            this.olvJobs.Size = new System.Drawing.Size(601, 80);
-            this.olvJobs.TabIndex = 1;
-            this.olvJobs.UseAlternatingBackColors = true;
-            this.olvJobs.UseCompatibleStateImageBehavior = false;
-            this.olvJobs.View = System.Windows.Forms.View.Details;
+            this.panel1.Controls.Add(this.btnShowTriggers);
+            this.panel1.Controls.Add(this.btnShowJobs);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(84, 495);
+            this.panel1.TabIndex = 8;
             // 
-            // olvName
+            // btnShowJobs
             // 
-            this.olvName.AspectName = "Key.Name";
-            this.olvName.Text = "Name";
-            this.olvName.Width = 245;
+            this.btnShowJobs.Location = new System.Drawing.Point(6, 12);
+            this.btnShowJobs.Name = "btnShowJobs";
+            this.btnShowJobs.Size = new System.Drawing.Size(75, 23);
+            this.btnShowJobs.TabIndex = 0;
+            this.btnShowJobs.Text = "Jobs";
+            this.btnShowJobs.UseVisualStyleBackColor = true;
+            this.btnShowJobs.Click += new System.EventHandler(this.btnShowJobs_Click);
             // 
-            // olvDescription
+            // btnShowTriggers
             // 
-            this.olvDescription.AspectName = "Description";
-            this.olvDescription.Text = "Description";
-            this.olvDescription.Width = 251;
+            this.btnShowTriggers.Location = new System.Drawing.Point(6, 41);
+            this.btnShowTriggers.Name = "btnShowTriggers";
+            this.btnShowTriggers.Size = new System.Drawing.Size(75, 23);
+            this.btnShowTriggers.TabIndex = 1;
+            this.btnShowTriggers.Text = "Triggers";
+            this.btnShowTriggers.UseVisualStyleBackColor = true;
+            this.btnShowTriggers.Click += new System.EventHandler(this.btnShowTriggers_Click);
             // 
-            // olvDurable
+            // _ucJobs1
             // 
-            this.olvDurable.AspectName = "Durable";
-            this.olvDurable.FillsFreeSpace = true;
-            this.olvDurable.Text = "Durable";
-            this.olvDurable.Width = 100;
+            this._ucJobs1.Location = new System.Drawing.Point(114, 12);
+            this._ucJobs1.Name = "_ucJobs1";
+            this._ucJobs1.Size = new System.Drawing.Size(693, 471);
+            this._ucJobs1.TabIndex = 9;
             // 
-            // btnAddJob
+            // _ucTriggers1
             // 
-            this.btnAddJob.Location = new System.Drawing.Point(620, 32);
-            this.btnAddJob.Name = "btnAddJob";
-            this.btnAddJob.Size = new System.Drawing.Size(75, 23);
-            this.btnAddJob.TabIndex = 2;
-            this.btnAddJob.Text = "Add Job";
-            this.btnAddJob.UseVisualStyleBackColor = true;
-            this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Location = new System.Drawing.Point(620, 62);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // olvTriggers
-            // 
-            this.olvTriggers.AllColumns.Add(this.olvTriggerKey);
-            this.olvTriggers.AllColumns.Add(this.olvJobName);
-            this.olvTriggers.AllColumns.Add(this.olvNextFire);
-            this.olvTriggers.CellEditUseWholeCell = false;
-            this.olvTriggers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvTriggerKey,
-            this.olvJobName,
-            this.olvNextFire});
-            this.olvTriggers.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvTriggers.FullRowSelect = true;
-            this.olvTriggers.Location = new System.Drawing.Point(13, 185);
-            this.olvTriggers.Name = "olvTriggers";
-            this.olvTriggers.ShowGroups = false;
-            this.olvTriggers.Size = new System.Drawing.Size(600, 97);
-            this.olvTriggers.TabIndex = 4;
-            this.olvTriggers.UseCompatibleStateImageBehavior = false;
-            this.olvTriggers.View = System.Windows.Forms.View.Details;
-            // 
-            // olvTriggerKey
-            // 
-            this.olvTriggerKey.AspectName = "TriggerKey";
-            this.olvTriggerKey.Text = "Trigger";
-            this.olvTriggerKey.Width = 88;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "JOBS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 154);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "TRIGGERS";
-            // 
-            // btnAddTrigger
-            // 
-            this.btnAddTrigger.Location = new System.Drawing.Point(620, 185);
-            this.btnAddTrigger.Name = "btnAddTrigger";
-            this.btnAddTrigger.Size = new System.Drawing.Size(75, 23);
-            this.btnAddTrigger.TabIndex = 7;
-            this.btnAddTrigger.Text = "Add Trigger";
-            this.btnAddTrigger.UseVisualStyleBackColor = true;
-            this.btnAddTrigger.Click += new System.EventHandler(this.btnAddTrigger_Click);
-            // 
-            // olvJobName
-            // 
-            this.olvJobName.AspectName = "JobName";
-            this.olvJobName.Text = "Job";
-            this.olvJobName.Width = 93;
-            // 
-            // olvNextFire
-            // 
-            this.olvNextFire.AspectName = "NextFireTimeUTC";
-            this.olvNextFire.FillsFreeSpace = true;
-            this.olvNextFire.Text = "Next Fire Time";
-            this.olvNextFire.Width = 274;
+            this._ucTriggers1.Location = new System.Drawing.Point(114, 12);
+            this._ucTriggers1.Name = "_ucTriggers1";
+            this._ucTriggers1.Size = new System.Drawing.Size(688, 483);
+            this._ucTriggers1.TabIndex = 10;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 378);
-            this.Controls.Add(this.btnAddTrigger);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.olvTriggers);
-            this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnAddJob);
-            this.Controls.Add(this.olvJobs);
+            this.ClientSize = new System.Drawing.Size(840, 495);
+            this.Controls.Add(this._ucTriggers1);
+            this.Controls.Add(this._ucJobs1);
+            this.Controls.Add(this.panel1);
             this.Name = "MainForm";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.olvJobs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).EndInit();
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private BrightIdeasSoftware.ObjectListView olvJobs;
-        private System.Windows.Forms.Button btnAddJob;
-        private System.Windows.Forms.Button btnRefresh;
-        private BrightIdeasSoftware.OLVColumn olvName;
-        private BrightIdeasSoftware.OLVColumn olvDescription;
-        private BrightIdeasSoftware.OLVColumn olvDurable;
-        private BrightIdeasSoftware.ObjectListView olvTriggers;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnAddTrigger;
-        private BrightIdeasSoftware.OLVColumn olvTriggerKey;
-        private BrightIdeasSoftware.OLVColumn olvJobName;
-        private BrightIdeasSoftware.OLVColumn olvNextFire;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnShowJobs;
+        private System.Windows.Forms.Button btnShowTriggers;
+        private _ucJobs _ucJobs1;
+        private _ucTriggers _ucTriggers1;
     }
 }
 

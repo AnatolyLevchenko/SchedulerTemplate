@@ -99,6 +99,18 @@
     <Compile Include="Scheduler\SchedulerInstance.cs" />
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
+    <Compile Include="_ucJobs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_ucJobs.Designer.cs">
+      <DependentUpon>_ucJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="_ucTriggers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_ucTriggers.Designer.cs">
+      <DependentUpon>_ucTriggers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddJob.resx">
       <DependentUpon>AddJob.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +133,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="_ucJobs.resx">
+      <DependentUpon>_ucJobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ucTriggers.resx">
+      <DependentUpon>_ucTriggers.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>
     </None>
