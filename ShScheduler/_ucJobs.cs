@@ -28,7 +28,7 @@ namespace ShScheduler
             FillOlv();
         }
 
-        private void FillOlv()
+        public void FillOlv()
         {
             olvJobs.SetObjects(Singleton.Instance.Scheduler.GetJobs());
         }

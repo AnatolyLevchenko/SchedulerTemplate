@@ -25,7 +25,7 @@ namespace ShScheduler
             FillOlv();
         }
 
-        private void FillOlv()
+        public void FillOlv()
         {
             olvTriggers.SetObjects(Singleton.Instance.Scheduler.GetAllTriggers());
         }

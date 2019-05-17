@@ -8,7 +8,7 @@ namespace ShScheduler.Scheduler
     {
         public  void Execute(IJobExecutionContext context)
         {
-            MessageBox.Show("invo");
+            MessageBox.Show("1");
         }
     }
 }

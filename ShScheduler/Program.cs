@@ -2,6 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 using ShData;
+using ShScheduler.Scheduler;
 
 namespace ShScheduler
 {
@@ -18,6 +19,9 @@ namespace ShScheduler
             log4net.Config.XmlConfigurator.Configure();
 
             InitDbIfRequired();
+
+             var name=  Singleton.Instance.Scheduler.SchedulerName;
+             Logger.LogInfo($"Scheduler with name {name} was started");
 
             Application.Run(new MainForm());
         }

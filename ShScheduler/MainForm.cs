@@ -22,9 +22,14 @@ namespace ShScheduler
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            _ucJobs1.BringToFront();
-            _ucTriggers1.Visible = false;
-            ChangeBackColor(btnShowJobs);
+           InitGrids();
+           btnShowJobs.PerformClick();
+        }
+
+        private void InitGrids()
+        {
+            _ucJobs1.FillOlv();
+            _ucTriggers1.FillOlv();
         }
 
         protected override void Dispose(bool disposing)
