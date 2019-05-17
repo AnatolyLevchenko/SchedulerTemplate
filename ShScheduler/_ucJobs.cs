@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ShScheduler.Scheduler;
+using ShScheduler.UserControls;
 
 namespace ShScheduler
 {
@@ -9,17 +10,20 @@ namespace ShScheduler
         public _ucJobs()
         {
             InitializeComponent();
-           // this.VisibleChanged += _ucJobs_VisibleChanged1;
-        }
-
-        private void _ucJobs_VisibleChanged1(object sender, EventArgs e)
-        {
-           FillOlv();
         }
 
         private void btnAddJob_Click(object sender, EventArgs e)
         {
-            new AddJob().ShowDialog();
+            using (DialogForm df = new DialogForm())
+            {
+                using (var trigger = new _ucAddJob())
+                {
+                    df.mainPanel.Controls.Add(trigger);
+                    df.ShowDialog();
+                }
+
+            }
+
             FillOlv();
         }
 

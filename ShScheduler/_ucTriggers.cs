@@ -11,6 +11,7 @@ using BrightIdeasSoftware;
 using Quartz;
 using ShScheduler.Properties;
 using ShScheduler.Scheduler;
+using ShScheduler.UserControls;
 using ShScheduler.ViewModels;
 
 namespace ShScheduler
@@ -58,11 +59,6 @@ namespace ShScheduler
             return Resources.planner;
         }
 
-        private void _ucTriggers_VisibleChanged(object sender, EventArgs e)
-        {
-            FillOlv();
-        }
-
         public void FillOlv()
         {
             olvTriggers.SetObjects(Singleton.Instance.Scheduler.GetAllTriggers());
@@ -70,7 +66,15 @@ namespace ShScheduler
 
         private void btnAddTrigger_Click(object sender, EventArgs e)
         {
-            new AddTrigger().ShowDialog();
+            using (DialogForm df=new DialogForm())
+            {
+                using (var trigger= new _ucAddTrigger())
+                {
+                    df.mainPanel.Controls.Add(trigger);
+                    df.ShowDialog();
+                }
+               
+            }
             FillOlv();
         }
 

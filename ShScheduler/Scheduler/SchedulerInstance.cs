@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Linq;
+using System.Windows.Forms;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Impl.Matchers;
@@ -97,6 +98,13 @@ namespace ShScheduler.Scheduler
             }
             scheduler.ResumeTrigger(trigger);
 
+        }
+
+        public static void TryCloseFrom(this UserControl uc)
+        {
+            Form tmp = uc.FindForm();
+            tmp.Close();
+            tmp.Dispose();
         }
     }
     public class Singleton

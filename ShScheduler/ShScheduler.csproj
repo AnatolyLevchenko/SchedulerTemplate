@@ -74,17 +74,11 @@
     <Compile Include="Additional\CronControl.Designer.cs">
       <DependentUpon>CronControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddJob.cs">
+    <Compile Include="DialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddJob.Designer.cs">
-      <DependentUpon>AddJob.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AddTrigger.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddTrigger.Designer.cs">
-      <DependentUpon>AddTrigger.cs</DependentUpon>
+    <Compile Include="DialogForm.Designer.cs">
+      <DependentUpon>DialogForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Helpers\MessageHelper.cs" />
     <Compile Include="MainForm.cs">
@@ -105,6 +99,18 @@
     <Compile Include="Properties\ControlResource.Designer.cs" />
     <Compile Include="Scheduler\HelloJob.cs" />
     <Compile Include="Scheduler\SchedulerInstance.cs" />
+    <Compile Include="UserControls\_ucAddJob.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\_ucAddJob.Designer.cs">
+      <DependentUpon>_ucAddJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\_ucAddTrigger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\_ucAddTrigger.Designer.cs">
+      <DependentUpon>_ucAddTrigger.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
     <Compile Include="_ucJobs.cs">
@@ -122,11 +128,8 @@
     <EmbeddedResource Include="Additional\CronControl.resx">
       <DependentUpon>CronControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddJob.resx">
-      <DependentUpon>AddJob.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddTrigger.resx">
-      <DependentUpon>AddTrigger.cs</DependentUpon>
+    <EmbeddedResource Include="DialogForm.resx">
+      <DependentUpon>DialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -145,6 +148,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\_ucAddJob.resx">
+      <DependentUpon>_ucAddJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucAddTrigger.resx">
+      <DependentUpon>_ucAddTrigger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_ucJobs.resx">
       <DependentUpon>_ucJobs.cs</DependentUpon>
     </EmbeddedResource>

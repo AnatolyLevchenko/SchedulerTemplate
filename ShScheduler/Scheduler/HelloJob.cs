@@ -7,7 +7,7 @@ namespace ShScheduler.Scheduler
     {
         public  void Execute(IJobExecutionContext context)
         {
-            MessageBox.Show("1");
+//          /  MessageBox.Show("1");
         }
     }
 }
