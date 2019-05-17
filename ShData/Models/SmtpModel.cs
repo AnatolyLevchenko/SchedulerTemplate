@@ -7,5 +7,9 @@
         public int Port { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
+
+        public int EnableSsl { get; set; }
+
+        public bool UseSsl => EnableSsl == 1;
     }
 }

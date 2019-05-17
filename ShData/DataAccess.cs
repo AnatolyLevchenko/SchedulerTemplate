@@ -92,7 +92,7 @@ namespace ShData
             {
                 con.Open();
                 var model = con.Query<SmtpModel>(
-                    "select Smtp,Email,Password,Port  FROM Smtp ORDER BY ID DESC LIMIT 1").FirstOrDefault();
+                    "select Smtp,Email,Password,Port,EnableSsl  FROM Smtp ORDER BY ID DESC LIMIT 1").FirstOrDefault();
                 con.Close();
 
                 return model;

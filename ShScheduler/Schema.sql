@@ -195,7 +195,8 @@ CREATE TABLE "Smtp" (
 	"Smtp"	TEXT NOT NULL,
 	"Email"	TEXT NOT NULL,
 	"Password"	TEXT NOT NULL,
-	"Port"	INTEGER NOT NULL
+	"Port"	INTEGER NOT NULL,
+	"EnableSsl"	INTEGER NOT NULL
 );
 
-INSERT INTO Smtp (Smtp,Email,Password,Port) VALUES ('smtp.gmail.com','baltacheck@gmail.com','Anatoliy12',587);
+INSERT INTO Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES ('smtp.gmail.com','baltacheck@gmail.com','Anatoliy12',587,0);
