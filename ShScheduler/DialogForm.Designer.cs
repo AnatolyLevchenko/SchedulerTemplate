@@ -45,7 +45,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(19, 419);
+            this.panel1.Size = new System.Drawing.Size(19, 452);
             this.panel1.TabIndex = 22;
             // 
             // btnClose
@@ -81,14 +81,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mainPanel.Location = new System.Drawing.Point(26, 13);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(448, 394);
+            this.mainPanel.Size = new System.Drawing.Size(448, 427);
             this.mainPanel.TabIndex = 23;
             // 
             // DialogForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(486, 419);
+            this.ClientSize = new System.Drawing.Size(486, 452);
             this.Controls.Add(this.mainPanel);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

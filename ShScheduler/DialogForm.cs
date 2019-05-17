@@ -15,6 +15,7 @@ namespace ShScheduler
         public DialogForm()
         {
             InitializeComponent();
+            this.mainPanel.Dock = DockStyle.Fill;
         }
     }
 }
