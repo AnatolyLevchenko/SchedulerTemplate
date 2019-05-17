@@ -20,10 +20,20 @@ namespace ShScheduler
 
             InitDbIfRequired();
 
-             var name=  Singleton.Instance.Scheduler.SchedulerName;
-             Logger.LogInfo($"Scheduler with name {name} was started");
+            DialogResult result;
 
-            Application.Run(new MainForm());
+            using (var authForm = new LoginForm())
+            {
+                result = authForm.ShowDialog();
+            }
+
+            if (result == DialogResult.OK)
+            {
+                var name = Singleton.Instance.Scheduler.SchedulerName;
+                Logger.LogInfo($"Scheduler with name {name} was started");
+                Application.Run(new MainForm());
+            }
+ 
         }
 
         static void InitDbIfRequired()

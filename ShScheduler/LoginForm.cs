@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using ShData;
+using ShScheduler.Helpers;
+using ShScheduler.Properties;
 
 namespace ShScheduler
 {
@@ -51,6 +54,80 @@ namespace ShScheduler
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+            if (Settings.Default.RememberMe)
+            {
+                if (Authorize(Settings.Default.Login, Settings.Default.Password))
+                {
+                    ////save login of user to Singleton instance and close form
+                    //LoggedUser.GetInstance(Settings.Default.Login);
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    FillLastLogged();
+                }
+            }
+
+            else
+            {
+                FillLastLogged();
+            }
+        }
+        private void FillLastLogged()
+        {
+            if (!string.IsNullOrEmpty(Settings.Default.LastLoggedUser))
+            {
+                txtLogin.Text = Settings.Default.LastLoggedUser;
+                txtPass.Select();
+            }
+        }
+
+        bool Authorize(string login, string password)
+        {
+            try
+            {
+                return DataAccess.Authorize(login, password);
+            }
+            catch (Exception e)
+            {
+                MessageHelper.DisplayError(e.Message);
+                return false;
+            }
+        }
+
+        private void SaveToSetting(string login, string password)
+        {
+            Settings.Default.Login = login;
+            Settings.Default.Password = password;
+            Settings.Default.RememberMe = true;
+            Settings.Default.Save();
+        }
+
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            if (Authorize(txtLogin.Text, txtPass.Text))
+            {
+                if (cbRememberMe.Checked)
+                    SaveToSetting(txtLogin.Text, txtPass.Text);
+
+                Settings.Default.LastLoggedUser = txtLogin.Text;
+                Settings.Default.Save();
+                DialogResult = DialogResult.OK;
+
+                //save login of user to Singleton instance
+                //LoggedUser.GetInstance(txtLogin.Text);
+
+
+            }
+            else
+            {
+                MessageHelper.DisplayError("Authorization failed");
+            }
         }
     }
 }

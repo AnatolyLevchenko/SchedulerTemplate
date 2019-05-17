@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quartz;
@@ -70,6 +71,22 @@ namespace ShScheduler
                 }
             }
 
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+            Properties.Settings.Default.Login = string.Empty;
+            Properties.Settings.Default.Password = string.Empty;
+            Properties.Settings.Default.RememberMe = false;
+            Properties.Settings.Default.Save();
+
+            Thread th = new Thread(() =>
+            {
+                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Application.Exit();
+            }) {IsBackground = true};
+            th.Start();
         }
     }
 }

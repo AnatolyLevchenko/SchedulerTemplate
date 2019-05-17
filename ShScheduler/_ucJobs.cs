@@ -32,5 +32,19 @@ namespace ShScheduler
         {
             olvJobs.SetObjects(Singleton.Instance.Scheduler.GetJobs());
         }
+
+        private void olvJobs_CellEditValidating(object sender, BrightIdeasSoftware.CellEditEventArgs e)
+        {
+            if (e.Column == olvDescription)
+            {
+                string newValue = ((TextBox)e.Control).Text.ToLowerInvariant();
+                if (string.IsNullOrEmpty(newValue))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show(this, "Empty name is not allowed!", "",
+                        MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+        }
     }
 }

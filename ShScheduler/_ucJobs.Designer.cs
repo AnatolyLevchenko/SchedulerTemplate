@@ -72,8 +72,8 @@
             this.olvJobs.AllColumns.Add(this.olvName);
             this.olvJobs.AllColumns.Add(this.olvDescription);
             this.olvJobs.AllColumns.Add(this.olvDurable);
+            this.olvJobs.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.DoubleClick;
             this.olvJobs.CellEditUseWholeCell = false;
-            this.olvJobs.CheckBoxes = true;
             this.olvJobs.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvName,
             this.olvDescription,
@@ -91,10 +91,12 @@
             this.olvJobs.UseAlternatingBackColors = true;
             this.olvJobs.UseCompatibleStateImageBehavior = false;
             this.olvJobs.View = System.Windows.Forms.View.Details;
+            this.olvJobs.CellEditValidating += new BrightIdeasSoftware.CellEditEventHandler(this.olvJobs_CellEditValidating);
             // 
             // olvName
             // 
             this.olvName.AspectName = "Key.Name";
+            this.olvName.IsEditable = false;
             this.olvName.Text = "Name";
             this.olvName.Width = 245;
             // 
@@ -108,6 +110,7 @@
             // 
             this.olvDurable.AspectName = "Durable";
             this.olvDurable.FillsFreeSpace = true;
+            this.olvDurable.IsEditable = false;
             this.olvDurable.Text = "Durable";
             this.olvDurable.Width = 100;
             // 
