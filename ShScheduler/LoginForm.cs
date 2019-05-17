@@ -90,7 +90,12 @@ namespace ShScheduler
         {
             try
             {
-                return DataAccess.Authorize(login, password);
+                var result= DataAccess.Authorize(login, password);
+                if (result == null)
+                    return false;
+                User.IsAdmin = result.IsAdmin;
+                User.Name = result.Login;
+                return true;
             }
             catch (Exception e)
             {

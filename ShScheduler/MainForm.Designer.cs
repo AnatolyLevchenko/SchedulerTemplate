@@ -33,6 +33,7 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnShowTriggers = new System.Windows.Forms.Button();
             this.btnShowJobs = new System.Windows.Forms.Button();
+            this.lbUser = new System.Windows.Forms.Label();
             this._ucTriggers1 = new ShScheduler._ucTriggers();
             this._ucJobs1 = new ShScheduler._ucJobs();
             this.panel1.SuspendLayout();
@@ -41,6 +42,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.lbUser);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.btnLogOut);
             this.panel1.Controls.Add(this.btnShowTriggers);
@@ -85,7 +87,7 @@
             this.btnShowTriggers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnShowTriggers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowTriggers.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnShowTriggers.Location = new System.Drawing.Point(3, 55);
+            this.btnShowTriggers.Location = new System.Drawing.Point(3, 95);
             this.btnShowTriggers.Name = "btnShowTriggers";
             this.btnShowTriggers.Size = new System.Drawing.Size(88, 37);
             this.btnShowTriggers.TabIndex = 1;
@@ -99,13 +101,24 @@
             this.btnShowJobs.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnShowJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowJobs.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnShowJobs.Location = new System.Drawing.Point(3, 12);
+            this.btnShowJobs.Location = new System.Drawing.Point(3, 52);
             this.btnShowJobs.Name = "btnShowJobs";
             this.btnShowJobs.Size = new System.Drawing.Size(88, 37);
             this.btnShowJobs.TabIndex = 0;
             this.btnShowJobs.Text = "Jobs";
             this.btnShowJobs.UseVisualStyleBackColor = false;
             this.btnShowJobs.Click += new System.EventHandler(this.btnShowJobs_Click);
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.BackColor = System.Drawing.Color.Lime;
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbUser.Location = new System.Drawing.Point(12, 12);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(47, 20);
+            this.lbUser.TabIndex = 4;
+            this.lbUser.Text = "User";
             // 
             // _ucTriggers1
             // 
@@ -136,6 +149,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -148,6 +162,7 @@
         private _ucTriggers _ucTriggers1;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label lbUser;
     }
 }
 

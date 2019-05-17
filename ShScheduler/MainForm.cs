@@ -26,6 +26,8 @@ namespace ShScheduler
         {
            InitGrids();
            btnShowTriggers.PerformClick();
+
+            lbUser.Text = User.Name;
         }
 
         private void InitGrids()

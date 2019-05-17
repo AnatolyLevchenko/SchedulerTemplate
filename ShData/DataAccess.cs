@@ -30,18 +30,23 @@ namespace ShData
             }
         }
 
-        public static bool Authorize(string login, string password)
+        public static AuthorizedModel Authorize(string login, string password)
         {
             using (IDbConnection con=new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
                 var model = con.Query<LoginModel>("select Id,Login,Password from Users where Login=@Login", 
                     new { login = new DbString { Value = login } }).FirstOrDefault();
-
+               
 
                 con.Close();
 
-                return model != null && CalculateMD5Hash(password).Equals(model.Password);
+                
+
+                bool authorized= model != null && CalculateMD5Hash(password).Equals(model.Password);
+                if(authorized)
+                    return new AuthorizedModel(model.Login,model.IsAdmin==1);
+                return null;
             }
         }
 

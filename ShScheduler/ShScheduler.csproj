@@ -99,6 +99,7 @@
     <Compile Include="Properties\ControlResource.Designer.cs" />
     <Compile Include="Scheduler\HelloJob.cs" />
     <Compile Include="Scheduler\SchedulerInstance.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="UserControls\_ucAddJob.cs">
       <SubType>UserControl</SubType>
     </Compile>
