@@ -42,7 +42,7 @@
             this.BtnLogin = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbRememberMe = new System.Windows.Forms.CheckBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbRemember = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -193,15 +193,16 @@
             this.cbRememberMe.TabIndex = 3;
             this.cbRememberMe.UseVisualStyleBackColor = true;
             // 
-            // label5
+            // lbRemember
             // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(289, 406);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 19);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Remember me";
+            this.lbRemember.AutoSize = true;
+            this.lbRemember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.lbRemember.Location = new System.Drawing.Point(289, 406);
+            this.lbRemember.Name = "lbRemember";
+            this.lbRemember.Size = new System.Drawing.Size(108, 19);
+            this.lbRemember.TabIndex = 11;
+            this.lbRemember.Text = "Remember me";
+            this.lbRemember.Click += new System.EventHandler(this.lbRemember_Click);
             // 
             // LoginForm
             // 
@@ -209,7 +210,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 549);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lbRemember);
             this.Controls.Add(this.cbRememberMe);
             this.Controls.Add(this.BtnLogin);
             this.Controls.Add(this.txtPass);
@@ -250,6 +251,6 @@
         private System.Windows.Forms.Button BtnLogin;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.CheckBox cbRememberMe;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbRemember;
     }
 }

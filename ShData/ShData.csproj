@@ -53,6 +53,7 @@
     <Compile Include="DataAccess.cs" />
     <Compile Include="Models\AuthorizedModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\SmtpModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

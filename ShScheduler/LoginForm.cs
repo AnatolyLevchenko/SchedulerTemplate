@@ -134,5 +134,10 @@ namespace ShScheduler
                 MessageHelper.DisplayError("Authorization failed");
             }
         }
+
+        private void lbRemember_Click(object sender, EventArgs e)
+        {
+            cbRememberMe.Checked = !cbRememberMe.Checked;
+        }
     }
 }

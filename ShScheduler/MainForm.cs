@@ -96,14 +96,27 @@ namespace ShScheduler
         {
             using (DialogForm df = new DialogForm())
             {
-                using (var trigger = new _ucRegister())
+                using (var register = new _ucRegister())
                 {
-                    df.mainPanel.Controls.Add(trigger);
+                    df.mainPanel.Controls.Add(register);
                     df.ShowDialog();
                 }
 
             }
 
+        }
+
+        private void btnSmtp_Click(object sender, EventArgs e)
+        {
+            using (DialogForm df = new DialogForm())
+            {
+                using (var smtp = new _ucSmtp())
+                {
+                    df.mainPanel.Controls.Add(smtp);
+                    df.ShowDialog();
+                }
+
+            }
         }
     }
 }

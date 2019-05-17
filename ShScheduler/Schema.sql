@@ -187,4 +187,15 @@ CREATE TABLE "Users" (
 	"IsAdmin"	INTEGER
 );
 
-INSERT INTO Users (Login,Password,IsAdmin) VALUES ('root','F24032D92F12487AC93331E7E6A65502',1)
+INSERT INTO Users (Login,Password,IsAdmin) VALUES ('root','F24032D92F12487AC93331E7E6A65502',1);
+
+
+CREATE TABLE "Smtp" (
+	"Id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"Smtp"	TEXT NOT NULL,
+	"Email"	TEXT NOT NULL,
+	"Password"	TEXT NOT NULL,
+	"Port"	INTEGER NOT NULL
+);
+
+INSERT INTO Smtp (Smtp,Email,Password,Port) VALUES ('smtp.gmail.com','baltacheck@gmail.com','Anatoliy12',587);

@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSmtp = new System.Windows.Forms.Button();
+            this.lbUser = new System.Windows.Forms.Label();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnShowTriggers = new System.Windows.Forms.Button();
             this.btnShowJobs = new System.Windows.Forms.Button();
-            this.lbUser = new System.Windows.Forms.Label();
             this._ucTriggers1 = new ShScheduler._ucTriggers();
             this._ucJobs1 = new ShScheduler._ucJobs();
             this.panel1.SuspendLayout();
@@ -42,6 +43,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.btnSmtp);
             this.panel1.Controls.Add(this.lbUser);
             this.panel1.Controls.Add(this.btnRegister);
             this.panel1.Controls.Add(this.btnLogOut);
@@ -52,6 +54,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(94, 495);
             this.panel1.TabIndex = 8;
+            // 
+            // btnSmtp
+            // 
+            this.btnSmtp.BackColor = System.Drawing.Color.Khaki;
+            this.btnSmtp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnSmtp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSmtp.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnSmtp.Location = new System.Drawing.Point(3, 373);
+            this.btnSmtp.Name = "btnSmtp";
+            this.btnSmtp.Size = new System.Drawing.Size(88, 37);
+            this.btnSmtp.TabIndex = 5;
+            this.btnSmtp.Text = "SMTP";
+            this.btnSmtp.UseVisualStyleBackColor = false;
+            this.btnSmtp.Click += new System.EventHandler(this.btnSmtp_Click);
+            // 
+            // lbUser
+            // 
+            this.lbUser.AutoSize = true;
+            this.lbUser.BackColor = System.Drawing.Color.Lime;
+            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lbUser.Location = new System.Drawing.Point(12, 12);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(47, 20);
+            this.lbUser.TabIndex = 4;
+            this.lbUser.Text = "User";
             // 
             // btnRegister
             // 
@@ -109,17 +136,6 @@
             this.btnShowJobs.UseVisualStyleBackColor = false;
             this.btnShowJobs.Click += new System.EventHandler(this.btnShowJobs_Click);
             // 
-            // lbUser
-            // 
-            this.lbUser.AutoSize = true;
-            this.lbUser.BackColor = System.Drawing.Color.Lime;
-            this.lbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lbUser.Location = new System.Drawing.Point(12, 12);
-            this.lbUser.Name = "lbUser";
-            this.lbUser.Size = new System.Drawing.Size(47, 20);
-            this.lbUser.TabIndex = 4;
-            this.lbUser.Text = "User";
-            // 
             // _ucTriggers1
             // 
             this._ucTriggers1.Location = new System.Drawing.Point(114, 12);
@@ -163,6 +179,7 @@
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Button btnSmtp;
     }
 }
 

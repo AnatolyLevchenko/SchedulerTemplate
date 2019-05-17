@@ -86,6 +86,19 @@ namespace ShData
             return sb.ToString();
         }
 
+        public static SmtpModel ReadSmtp()
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var model = con.Query<SmtpModel>(
+                    "select Smtp,Email,Password,Port  FROM Smtp ORDER BY ID DESC LIMIT 1").FirstOrDefault();
+                con.Close();
+
+                return model;
+            }
+        }
+
 
     }
 }

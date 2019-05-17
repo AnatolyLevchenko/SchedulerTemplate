@@ -118,6 +118,12 @@
     <Compile Include="UserControls\_ucRegister.Designer.cs">
       <DependentUpon>_ucRegister.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\_ucSmtp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\_ucSmtp.Designer.cs">
+      <DependentUpon>_ucSmtp.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
     <Compile Include="_ucJobs.cs">
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucRegister.resx">
       <DependentUpon>_ucRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucSmtp.resx">
+      <DependentUpon>_ucSmtp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_ucJobs.resx">
       <DependentUpon>_ucJobs.cs</DependentUpon>
