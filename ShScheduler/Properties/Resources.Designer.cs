@@ -83,6 +83,16 @@ namespace ShScheduler.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap planner {
+            get {
+                object obj = ResourceManager.GetObject("planner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap scheduler {
             get {
                 object obj = ResourceManager.GetObject("scheduler", resourceCulture);

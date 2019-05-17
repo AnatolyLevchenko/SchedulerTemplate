@@ -23,7 +23,7 @@ namespace ShScheduler
         private void MainForm_Load(object sender, EventArgs e)
         {
            InitGrids();
-           btnShowJobs.PerformClick();
+           btnShowTriggers.PerformClick();
         }
 
         private void InitGrids()

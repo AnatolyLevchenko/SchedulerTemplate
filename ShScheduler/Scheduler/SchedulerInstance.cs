@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Configuration;
+using System.Linq;
 using Quartz;
 using Quartz.Impl;
 using Quartz.Impl.Matchers;
@@ -43,8 +45,6 @@ namespace ShScheduler.Scheduler
         public static List<TriggerInfo> GetAllTriggers(this IScheduler scheduler)
         {
 
-            
-
             List<TriggerInfo> tr=new List<TriggerInfo>();
 
             var allTriggerKeys = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup());
@@ -74,6 +74,29 @@ namespace ShScheduler.Scheduler
             }
 
             return tr;
+        }
+
+
+        public static void PauseTrigger(this IScheduler scheduler,string triggerName)
+        {
+            var trigger = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup()).FirstOrDefault(t=>t.Name.Equals(triggerName));
+            if (trigger == null)
+            {
+                throw  new Exception("trigger not found");
+            }
+            scheduler.PauseTrigger(trigger);
+
+        }
+
+        public static void ResumeTrigger(this IScheduler scheduler, string triggerName)
+        {
+            var trigger = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup()).FirstOrDefault(t => t.Name.Equals(triggerName));
+            if (trigger == null)
+            {
+                throw new Exception("trigger not found");
+            }
+            scheduler.ResumeTrigger(trigger);
+
         }
     }
     public class Singleton

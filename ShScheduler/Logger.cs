@@ -1,4 +1,5 @@
-﻿using  log4net;
+﻿using System;
+using  log4net;
 namespace ShScheduler
 {
     class Logger
@@ -8,6 +9,11 @@ namespace ShScheduler
         public static void LogInfo(string message)
         {
             _log.Info(message);
+        }
+
+        public static void LogException(string message,Exception exc)
+        {
+            _log.Error(message,exc);
         }
     }
 }
