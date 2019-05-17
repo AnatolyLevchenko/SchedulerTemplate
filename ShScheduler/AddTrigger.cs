@@ -28,10 +28,16 @@ namespace ShScheduler
            var trigger = TriggerBuilder.Create()
                 .WithIdentity(txtTriggerName.Text, "triggers")
                 .WithCronSchedule(txtCronValue.Text)
-                .ForJob(job.Key, job.Group)
-                .StartNow()
-                .Build();
-            Singleton.Instance.Scheduler.ScheduleJob(trigger);
+                .ForJob(job.Key, job.Group);
+
+            if (cbStartNow.Checked)
+            {
+              trigger=trigger.StartNow();
+            }
+
+            var result = trigger.Build();
+
+            Singleton.Instance.Scheduler.ScheduleJob(result);
             this.Dispose();
         }
 

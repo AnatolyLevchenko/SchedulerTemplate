@@ -40,8 +40,10 @@
             this.cmbJobName = new System.Windows.Forms.ComboBox();
             this.txtCronValue = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.cronControl1 = new ShScheduler.Additional.CronControl();
             this.btnGenerate = new System.Windows.Forms.Button();
+            this.cronControl1 = new ShScheduler.Additional.CronControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cbStartNow = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +55,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(323, 346);
+            this.btnCancel.Location = new System.Drawing.Point(319, 379);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 34);
             this.btnCancel.TabIndex = 5;
@@ -69,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(19, 455);
+            this.panel1.Size = new System.Drawing.Size(19, 492);
             this.panel1.TabIndex = 21;
             // 
             // btnClose
@@ -105,7 +107,7 @@
             this.btnAddTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTrigger.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAddTrigger.ForeColor = System.Drawing.Color.White;
-            this.btnAddTrigger.Location = new System.Drawing.Point(25, 346);
+            this.btnAddTrigger.Location = new System.Drawing.Point(24, 379);
             this.btnAddTrigger.Name = "btnAddTrigger";
             this.btnAddTrigger.Size = new System.Drawing.Size(283, 34);
             this.btnAddTrigger.TabIndex = 4;
@@ -154,7 +156,7 @@
             // txtCronValue
             // 
             this.txtCronValue.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCronValue.Location = new System.Drawing.Point(29, 133);
+            this.txtCronValue.Location = new System.Drawing.Point(29, 153);
             this.txtCronValue.Name = "txtCronValue";
             this.txtCronValue.Size = new System.Drawing.Size(400, 31);
             this.txtCronValue.TabIndex = 3;
@@ -164,24 +166,16 @@
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label5.Location = new System.Drawing.Point(25, 117);
+            this.label5.Location = new System.Drawing.Point(26, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 29;
             this.label5.Text = "Cron Expression";
             // 
-            // cronControl1
-            // 
-            this.cronControl1.Location = new System.Drawing.Point(29, 170);
-            this.cronControl1.MinimumSize = new System.Drawing.Size(0, 130);
-            this.cronControl1.Name = "cronControl1";
-            this.cronControl1.Size = new System.Drawing.Size(396, 130);
-            this.cronControl1.TabIndex = 30;
-            this.cronControl1.Value = "0 0/1 * 1/1 * ? *";
-            // 
             // btnGenerate
             // 
-            this.btnGenerate.Location = new System.Drawing.Point(29, 306);
+            this.btnGenerate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerate.Location = new System.Drawing.Point(24, 336);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(75, 23);
             this.btnGenerate.TabIndex = 31;
@@ -189,12 +183,42 @@
             this.btnGenerate.UseVisualStyleBackColor = true;
             this.btnGenerate.Click += new System.EventHandler(this.btnGenerate_Click);
             // 
+            // cronControl1
+            // 
+            this.cronControl1.Location = new System.Drawing.Point(25, 200);
+            this.cronControl1.MinimumSize = new System.Drawing.Size(0, 130);
+            this.cronControl1.Name = "cronControl1";
+            this.cronControl1.Size = new System.Drawing.Size(396, 130);
+            this.cronControl1.TabIndex = 30;
+            this.cronControl1.Value = "0 0/1 * 1/1 * ? *";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.label2.Location = new System.Drawing.Point(26, 121);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 33;
+            this.label2.Text = "Start now";
+            // 
+            // cbStartNow
+            // 
+            this.cbStartNow.AutoSize = true;
+            this.cbStartNow.Location = new System.Drawing.Point(84, 121);
+            this.cbStartNow.Name = "cbStartNow";
+            this.cbStartNow.Size = new System.Drawing.Size(15, 14);
+            this.cbStartNow.TabIndex = 34;
+            this.cbStartNow.UseVisualStyleBackColor = true;
+            // 
             // AddTrigger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(449, 455);
+            this.ClientSize = new System.Drawing.Size(449, 492);
+            this.Controls.Add(this.cbStartNow);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnGenerate);
             this.Controls.Add(this.cronControl1);
             this.Controls.Add(this.txtCronValue);
@@ -232,5 +256,7 @@
         private System.Windows.Forms.Label label5;
         private Additional.CronControl cronControl1;
         private System.Windows.Forms.Button btnGenerate;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox cbStartNow;
     }
 }
