@@ -111,6 +111,12 @@
     <Compile Include="UserControls\_ucAddTrigger.Designer.cs">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\_ucRegister.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\_ucRegister.Designer.cs">
+      <DependentUpon>_ucRegister.cs</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
     <Compile Include="_ucJobs.cs">
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddTrigger.resx">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucRegister.resx">
+      <DependentUpon>_ucRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_ucJobs.resx">
       <DependentUpon>_ucJobs.cs</DependentUpon>

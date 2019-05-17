@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnLogOut = new System.Windows.Forms.Button();
             this.btnShowTriggers = new System.Windows.Forms.Button();
             this.btnShowJobs = new System.Windows.Forms.Button();
-            this.btnLogOut = new System.Windows.Forms.Button();
             this._ucTriggers1 = new ShScheduler._ucTriggers();
             this._ucJobs1 = new ShScheduler._ucJobs();
-            this.btnRegister = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,6 +50,34 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(94, 495);
             this.panel1.TabIndex = 8;
+            // 
+            // btnRegister
+            // 
+            this.btnRegister.BackColor = System.Drawing.Color.Khaki;
+            this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRegister.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnRegister.Location = new System.Drawing.Point(3, 330);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(88, 37);
+            this.btnRegister.TabIndex = 3;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.Khaki;
+            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogOut.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 432);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.Size = new System.Drawing.Size(88, 37);
+            this.btnLogOut.TabIndex = 2;
+            this.btnLogOut.Text = "Log Out";
+            this.btnLogOut.UseVisualStyleBackColor = false;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
             // btnShowTriggers
             // 
@@ -79,20 +107,6 @@
             this.btnShowJobs.UseVisualStyleBackColor = false;
             this.btnShowJobs.Click += new System.EventHandler(this.btnShowJobs_Click);
             // 
-            // btnLogOut
-            // 
-            this.btnLogOut.BackColor = System.Drawing.Color.Khaki;
-            this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogOut.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnLogOut.Location = new System.Drawing.Point(3, 432);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.Size = new System.Drawing.Size(88, 37);
-            this.btnLogOut.TabIndex = 2;
-            this.btnLogOut.Text = "Log Out";
-            this.btnLogOut.UseVisualStyleBackColor = false;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
             // _ucTriggers1
             // 
             this._ucTriggers1.Location = new System.Drawing.Point(114, 12);
@@ -106,19 +120,6 @@
             this._ucJobs1.Name = "_ucJobs1";
             this._ucJobs1.Size = new System.Drawing.Size(693, 471);
             this._ucJobs1.TabIndex = 9;
-            // 
-            // btnRegister
-            // 
-            this.btnRegister.BackColor = System.Drawing.Color.Khaki;
-            this.btnRegister.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnRegister.Location = new System.Drawing.Point(3, 330);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(88, 37);
-            this.btnRegister.TabIndex = 3;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.UseVisualStyleBackColor = false;
             // 
             // MainForm
             // 

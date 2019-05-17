@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SQLite;
@@ -38,10 +39,31 @@ namespace ShData
                     new { login = new DbString { Value = login } }).FirstOrDefault();
 
 
+                con.Close();
 
                 return model != null && CalculateMD5Hash(password).Equals(model.Password);
             }
         }
+
+        public static bool Register(LoginModel model)
+        {
+            if (!model.IsValid)
+                throw new Exception("Model is not valid");
+
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var user = con.Query<LoginModel>("select Login from Users where Login=@Login",
+                    new { login = new DbString { Value = model.Login } }).FirstOrDefault();
+                if (user != null)
+                    throw new Exception("User already exists");
+                
+              return 1 == con.Execute(@"insert or ignore into Users (Login,Password,IsAdmin) VALUES (@Login,@Password,@IsAdmin)",
+                     new { model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin }, commandType: CommandType.Text);
+            }
+
+        }
+
 
 
         private static string CalculateMD5Hash(string input)

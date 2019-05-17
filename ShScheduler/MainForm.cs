@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using Quartz;
 using Quartz.Impl;
 using ShScheduler.Scheduler;
+using ShScheduler.UserControls;
 
 namespace ShScheduler
 {
@@ -87,6 +88,20 @@ namespace ShScheduler
                 Application.Exit();
             }) {IsBackground = true};
             th.Start();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            using (DialogForm df = new DialogForm())
+            {
+                using (var trigger = new _ucRegister())
+                {
+                    df.mainPanel.Controls.Add(trigger);
+                    df.ShowDialog();
+                }
+
+            }
+
         }
     }
 }
