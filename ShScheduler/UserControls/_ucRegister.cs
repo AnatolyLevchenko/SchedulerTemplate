@@ -4,6 +4,7 @@ using ShData;
 using ShData.Models;
 using ShScheduler.Helpers;
 using ShScheduler.Scheduler;
+using ShScheduler.Utils;
 
 namespace ShScheduler.UserControls
 {
@@ -25,6 +26,13 @@ namespace ShScheduler.UserControls
 
             try
             {
+                if(!RegexUtilities.IsValidEmail(txtEmail.Text))
+                    throw new Exception("Email address is not valid");
+                if(string.IsNullOrEmpty(txtLogin.Text))
+                    throw new Exception("Login field is required");
+                if(string.IsNullOrEmpty(txtPassword.Text))
+                    throw new Exception("Password is required");
+
                 bool done = DataAccess.Register(model);
 
                 if(!done)

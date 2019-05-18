@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quartz;
+using ShScheduler.Helpers;
 using ShScheduler.Scheduler;
 
 namespace ShScheduler.UserControls
@@ -26,17 +27,24 @@ namespace ShScheduler.UserControls
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                IJobDetail helloJob = JobBuilder.Create<HelloJob>()
+                    .WithIdentity(txtJobName.Text)
+                    .WithDescription(txtJobDescription.Text)
+                    .RequestRecovery(false)
+                    .StoreDurably(true)
+                    .Build();
 
-            IJobDetail helloJob = JobBuilder.Create<HelloJob>()
-                .WithIdentity(txtJobName.Text)
-                .WithDescription(txtJobDescription.Text)
-                .RequestRecovery(false)
-                .StoreDurably(true)
-                .Build();
+                Singleton.Instance.Scheduler.AddJob(helloJob, false);
 
-            Singleton.Instance.Scheduler.AddJob(helloJob, false);
-
-            this.TryCloseFrom();
+                this.TryCloseFrom();
+            }
+            catch (Exception exception)
+            {
+              MessageHelper.DisplayError(exception.Message);
+            }
+            
         }
     }
 }

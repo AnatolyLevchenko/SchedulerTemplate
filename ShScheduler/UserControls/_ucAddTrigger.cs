@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Windows.Forms;
 using Quartz;
+using ShScheduler.Helpers;
 using ShScheduler.Scheduler;
 using ShScheduler.ViewModels;
 
@@ -28,22 +29,35 @@ namespace ShScheduler.UserControls
 
         private void btnAddTrigger_Click(object sender, EventArgs e)
         {
-            var job = cmbJobName.SelectedItem as JobModel;
-            var trigger = TriggerBuilder.Create()
-                .WithIdentity(txtTriggerName.Text, "triggers")
-                .WithCronSchedule(txtCronValue.Text)
-                .ForJob(job.Key, job.Group);
-
-            if (cbStartNow.Checked)
+            try
             {
-                trigger = trigger.StartNow();
+                var job = cmbJobName.SelectedItem as JobModel;
+
+                if(job==null)
+                    throw new Exception("Job is required");
+
+
+                var trigger = TriggerBuilder.Create()
+                    .WithIdentity(txtTriggerName.Text, "triggers")
+                    .WithCronSchedule(txtCronValue.Text)
+                    .ForJob(job.Key, job.Group);
+
+                if (cbStartNow.Checked)
+                {
+                    trigger = trigger.StartNow();
+                }
+
+                var result = trigger.Build();
+
+                Singleton.Instance.Scheduler.ScheduleJob(result);
+
+                this.TryCloseFrom();
             }
-
-            var result = trigger.Build();
-
-            Singleton.Instance.Scheduler.ScheduleJob(result);
-
-            this.TryCloseFrom();
+            catch (Exception ex)
+            {
+                MessageHelper.DisplayError(ex.Message);
+            }
+          
             
         }
 
