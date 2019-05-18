@@ -36,7 +36,7 @@ namespace ShData
             using (IDbConnection con=new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
-                var model = con.Query<LoginModel>("select Id,Login,Password from Users where Login=@Login", 
+                var model = con.Query<LoginModel>("select Id,Login,Password,Email from Users where Login=@Login", 
                     new { login = new DbString { Value = login } }).FirstOrDefault();
                
 
@@ -46,7 +46,7 @@ namespace ShData
 
                 bool authorized= model != null && CalculateMD5Hash(password).Equals(model.Password);
                 if(authorized)
-                    return new AuthorizedModel(model.Login,model.IsAdmin==1);
+                    return new AuthorizedModel(model.Login,model.IsAdmin==1,model.Email);
                 return null;
             }
         }

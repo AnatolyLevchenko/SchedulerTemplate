@@ -95,6 +95,7 @@ namespace ShScheduler
                     return false;
                 User.IsAdmin = result.IsAdmin;
                 User.Name = result.Login;
+                User.Email = result.Email;
                 return true;
             }
             catch (Exception e)
