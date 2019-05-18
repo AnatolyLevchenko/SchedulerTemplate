@@ -145,6 +145,12 @@
     <Compile Include="ViewModels\EmailMessage.cs" />
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
+    <Compile Include="_ucFeedbacks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_ucFeedbacks.Designer.cs">
+      <DependentUpon>_ucFeedbacks.cs</DependentUpon>
+    </Compile>
     <Compile Include="_ucJobs.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -200,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucSmtp.resx">
       <DependentUpon>_ucSmtp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ucFeedbacks.resx">
+      <DependentUpon>_ucFeedbacks.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_ucJobs.resx">
       <DependentUpon>_ucJobs.cs</DependentUpon>

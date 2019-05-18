@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnSmtp = new System.Windows.Forms.Button();
             this.lbUser = new System.Windows.Forms.Label();
@@ -37,14 +38,15 @@
             this.btnLogOut = new System.Windows.Forms.Button();
             this.btnShowTriggers = new System.Windows.Forms.Button();
             this.btnShowJobs = new System.Windows.Forms.Button();
-            this._ucUsers1 = new ShScheduler._ucUsers();
-            this._ucTriggers1 = new ShScheduler._ucTriggers();
-            this._ucJobs1 = new ShScheduler._ucJobs();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemShow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuIExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnExit = new System.Windows.Forms.Button();
+            this._ucFeedbacks1 = new ShScheduler._ucFeedbacks();
+            this._ucUsers1 = new ShScheduler._ucUsers();
+            this._ucTriggers1 = new ShScheduler._ucTriggers();
+            this._ucJobs1 = new ShScheduler._ucJobs();
+            this.btnFeedback = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +54,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.btnFeedback);
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.btnSmtp);
@@ -65,6 +68,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(94, 495);
             this.panel1.TabIndex = 8;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Khaki;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Location = new System.Drawing.Point(3, 459);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(88, 33);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnUsers
             // 
@@ -161,27 +178,6 @@
             this.btnShowJobs.UseVisualStyleBackColor = false;
             this.btnShowJobs.Click += new System.EventHandler(this.btnShowJobs_Click);
             // 
-            // _ucUsers1
-            // 
-            this._ucUsers1.Location = new System.Drawing.Point(114, 12);
-            this._ucUsers1.Name = "_ucUsers1";
-            this._ucUsers1.Size = new System.Drawing.Size(688, 471);
-            this._ucUsers1.TabIndex = 11;
-            // 
-            // _ucTriggers1
-            // 
-            this._ucTriggers1.Location = new System.Drawing.Point(114, 12);
-            this._ucTriggers1.Name = "_ucTriggers1";
-            this._ucTriggers1.Size = new System.Drawing.Size(688, 471);
-            this._ucTriggers1.TabIndex = 10;
-            // 
-            // _ucJobs1
-            // 
-            this._ucJobs1.Location = new System.Drawing.Point(114, 12);
-            this._ucJobs1.Name = "_ucJobs1";
-            this._ucJobs1.Size = new System.Drawing.Size(693, 471);
-            this._ucJobs1.TabIndex = 9;
-            // 
             // notifyIcon1
             // 
             this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
@@ -210,19 +206,47 @@
             this.toolStripMenuIExit.Text = "Exit";
             this.toolStripMenuIExit.Click += new System.EventHandler(this.toolStripMenuIExit_Click);
             // 
-            // btnExit
+            // _ucFeedbacks1
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Khaki;
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnExit.Location = new System.Drawing.Point(3, 459);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(88, 33);
-            this.btnExit.TabIndex = 7;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = false;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this._ucFeedbacks1.Location = new System.Drawing.Point(114, 12);
+            this._ucFeedbacks1.Name = "_ucFeedbacks1";
+            this._ucFeedbacks1.Size = new System.Drawing.Size(693, 471);
+            this._ucFeedbacks1.TabIndex = 12;
+            // 
+            // _ucUsers1
+            // 
+            this._ucUsers1.Location = new System.Drawing.Point(114, 12);
+            this._ucUsers1.Name = "_ucUsers1";
+            this._ucUsers1.Size = new System.Drawing.Size(688, 471);
+            this._ucUsers1.TabIndex = 11;
+            // 
+            // _ucTriggers1
+            // 
+            this._ucTriggers1.Location = new System.Drawing.Point(114, 12);
+            this._ucTriggers1.Name = "_ucTriggers1";
+            this._ucTriggers1.Size = new System.Drawing.Size(688, 471);
+            this._ucTriggers1.TabIndex = 10;
+            // 
+            // _ucJobs1
+            // 
+            this._ucJobs1.Location = new System.Drawing.Point(114, 12);
+            this._ucJobs1.Name = "_ucJobs1";
+            this._ucJobs1.Size = new System.Drawing.Size(693, 471);
+            this._ucJobs1.TabIndex = 9;
+            // 
+            // btnFeedback
+            // 
+            this.btnFeedback.BackColor = System.Drawing.Color.Khaki;
+            this.btnFeedback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnFeedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFeedback.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnFeedback.Location = new System.Drawing.Point(3, 181);
+            this.btnFeedback.Name = "btnFeedback";
+            this.btnFeedback.Size = new System.Drawing.Size(88, 37);
+            this.btnFeedback.TabIndex = 8;
+            this.btnFeedback.Text = "F-backs";
+            this.btnFeedback.UseVisualStyleBackColor = false;
+            this.btnFeedback.Click += new System.EventHandler(this.btnFeedback_Click);
             // 
             // MainForm
             // 
@@ -230,6 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(840, 495);
+            this.Controls.Add(this._ucFeedbacks1);
             this.Controls.Add(this._ucUsers1);
             this.Controls.Add(this._ucTriggers1);
             this.Controls.Add(this._ucJobs1);
@@ -266,6 +291,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShow;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuIExit;
         private System.Windows.Forms.Button btnExit;
+        private _ucFeedbacks _ucFeedbacks1;
+        private System.Windows.Forms.Button btnFeedback;
     }
 }
 

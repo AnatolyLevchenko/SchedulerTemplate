@@ -38,7 +38,7 @@ namespace ShData
             {
                 con.Open();
                 var model = con.Query<LoginModel>("select Id,Login,Password,Email from Users where Login=@Login",
-                    new {login = new DbString {Value = login}}).FirstOrDefault();
+                    new { login = new DbString { Value = login } }).FirstOrDefault();
 
 
                 con.Close();
@@ -61,13 +61,13 @@ namespace ShData
             {
                 con.Open();
                 var user = con.Query<LoginModel>("select Login from Users where Login=@Login",
-                    new {login = new DbString {Value = model.Login}}).FirstOrDefault();
+                    new { login = new DbString { Value = model.Login } }).FirstOrDefault();
                 if (user != null)
                     throw new Exception("User already exists");
 
                 return 1 == con.Execute(
                            @"insert or ignore into Users (Login,Password,IsAdmin,Email) VALUES (@Login,@Password,@IsAdmin,@Email)",
-                           new {model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin, model.Email},
+                           new { model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin, model.Email },
                            commandType: CommandType.Text);
             }
 
@@ -108,7 +108,7 @@ namespace ShData
                 con.Open();
                 bool result = 1 == con.Execute(
                                   @"insert or ignore into Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES (@Smtp,@Email,@Password,@Port,@EnableSsl)",
-                                  new {model.Smtp, model.Email, model.Password, model.Port, model.EnableSsl},
+                                  new { model.Smtp, model.Email, model.Password, model.Port, model.EnableSsl },
                                   commandType: CommandType.Text);
                 con.Close();
                 return result;
@@ -133,7 +133,7 @@ namespace ShData
             {
                 con.Open();
                 var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
-                    new {login = new DbString {Value = login}}).FirstOrDefault();
+                    new { login = new DbString { Value = login } }).FirstOrDefault();
                 if (user == null)
                     throw new Exception("User not found");
 
@@ -142,7 +142,7 @@ namespace ShData
                     adm = 1;
 
                 bool result = 1 == con.Execute(@"update Users SET IsAdmin=@admin where Id=@id",
-                                  new {admin = adm, user.Id}, commandType: CommandType.Text);
+                                  new { admin = adm, user.Id }, commandType: CommandType.Text);
                 con.Close();
 
                 return result;
@@ -155,13 +155,13 @@ namespace ShData
             {
                 con.Open();
                 var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
-                    new {login = new DbString {Value = login}}).FirstOrDefault();
+                    new { login = new DbString { Value = login } }).FirstOrDefault();
                 if (user == null)
                     throw new Exception("User not found");
 
 
                 bool result = 1 == con.Execute(@"update Users SET Email=@Email where Id=@id",
-                                  new {Email = value, user.Id}, commandType: CommandType.Text);
+                                  new { Email = value, user.Id }, commandType: CommandType.Text);
                 con.Close();
 
                 return result;
@@ -170,13 +170,24 @@ namespace ShData
 
         public static void AddFeedback(FeedbackModel fm)
         {
-                using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
-                {
-                    con.Open();
-                    con.Execute(@"insert into  UserFeedback(JobName,TriggerName,Text,User) VALUES(@job,@trigger,@text,@user)",
-                        new {job = fm.Job, trigger=fm.Trigger,text=fm.Text,user=fm.User}, commandType: CommandType.Text);
-                    con.Close();
-                }
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                con.Execute(@"insert into  UserFeedback(JobName,TriggerName,Text,User) VALUES(@job,@trigger,@text,@user)",
+                    new { job = fm.JobName, trigger = fm.TriggerName, text = fm.Text, user = fm.User }, commandType: CommandType.Text);
+                con.Close();
+            }
+        }
+
+        public static List<FeedbackModel> GetFeedbacks()
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var users = con.Query<FeedbackModel>("select JobName,TriggerName,Text,User from UserFeedback");
+                con.Close();
+                return users.ToList();
             }
         }
     }
+}

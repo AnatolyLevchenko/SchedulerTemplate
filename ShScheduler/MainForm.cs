@@ -37,6 +37,7 @@ namespace ShScheduler
             _ucJobs1.FillOlv();
             _ucTriggers1.FillOlv();
             _ucUsers1.FillOlv();
+            _ucFeedbacks1.FillOlv();
         }
 
         //protected override void Dispose(bool disposing)
@@ -53,14 +54,14 @@ namespace ShScheduler
         {
             _ucJobs1.Visible = true;
             _ucJobs1.BringToFront();
-            _ucTriggers1.Visible=_ucUsers1.Visible = false;
+            _ucTriggers1.Visible=_ucUsers1.Visible=_ucFeedbacks1.Visible = false;
             ChangeBackColor(sender);
         }
 
         private void btnShowTriggers_Click(object sender, EventArgs e)
         {
             _ucTriggers1.BringToFront();
-            _ucJobs1.Visible =_ucUsers1.Visible= false;
+            _ucJobs1.Visible =_ucUsers1.Visible=_ucFeedbacks1.Visible= false;
             _ucTriggers1.Visible = true;
 
             ChangeBackColor(sender);
@@ -145,7 +146,7 @@ namespace ShScheduler
 
         private void toolStripMenuItemShow_Click(object sender, EventArgs e)
         {
-            this.WindowState = WindowState = FormWindowState.Normal;
+            this.WindowState  = FormWindowState.Normal;
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -175,6 +176,15 @@ namespace ShScheduler
         private void btnExit_Click(object sender, EventArgs e)
         {
             toolStripMenuIExit.PerformClick();
+        }
+
+        private void btnFeedback_Click(object sender, EventArgs e)
+        {
+            _ucTriggers1.BringToFront();
+            _ucJobs1.Visible = _ucUsers1.Visible = _ucTriggers1.Visible = false;
+            _ucFeedbacks1.Visible = true;
+
+            ChangeBackColor(sender);
         }
     }
 }

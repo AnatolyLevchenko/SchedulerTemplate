@@ -33,8 +33,8 @@ namespace ShScheduler
                 DataAccess.AddFeedback(new FeedbackModel()
                 {
                     Text = this.txtFeedback.Text,
-                    Job = this._jobDetail.Key.Name,
-                    Trigger = this._trigger.Key.Name,
+                    JobName = this._jobDetail.Key.Name,
+                    TriggerName = this._trigger.Key.Name,
                     User = User.Name
                 });
                 Mailer.SendEmail(new EmailMessage()
