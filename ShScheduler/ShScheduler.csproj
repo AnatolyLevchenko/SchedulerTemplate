@@ -236,6 +236,7 @@
     <None Include="Resources\close.png" />
     <None Include="Resources\planner.png" />
     <None Include="Resources\completed.png" />
+    <None Include="Resources\timer.ico" />
     <Content Include="Schema.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Quartz;
 using Quartz.Impl;
+using ShScheduler.Helpers;
 using ShScheduler.Scheduler;
 using ShScheduler.UserControls;
 
@@ -20,6 +21,7 @@ namespace ShScheduler
         public MainForm()
         {
             InitializeComponent();
+            this.notifyIcon1.Icon = Properties.Resources.timer;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -37,15 +39,15 @@ namespace ShScheduler
             _ucUsers1.FillOlv();
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                Singleton.Instance.Scheduler.Shutdown();
-            }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        Singleton.Instance.Scheduler.Shutdown();
+        //    }
            
-            base.Dispose(disposing);
-        }
+        //    base.Dispose(disposing);
+        //}
 
         private void btnShowJobs_Click(object sender, EventArgs e)
         {
@@ -128,6 +130,40 @@ namespace ShScheduler
             _ucUsers1.Visible = true;
 
             ChangeBackColor(sender);
+        }
+
+        private void MainForm_SizeChanged(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                notifyIcon1.BalloonTipText = "Still works in background";
+                notifyIcon1.ShowBalloonTip(300);
+            }
+        }
+
+        private void toolStripMenuItemShow_Click(object sender, EventArgs e)
+        {
+            this.WindowState = WindowState = FormWindowState.Normal;
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void toolStripMenuIExit_Click(object sender, EventArgs e)
+        {
+            var count = Application.OpenForms.Cast<Form>().Count(x => x.Name != "MainForm");
+            if (count > 0)
+            {
+                MessageHelper.DisplayError("Close feedback form(s) first");
+                return;
+            }
+            Singleton.Instance.Scheduler.Standby();
+            Singleton.Instance.Scheduler.Shutdown();
+            this.Dispose();
+            
         }
     }
 }

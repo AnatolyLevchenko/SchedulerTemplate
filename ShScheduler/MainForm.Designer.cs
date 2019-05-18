@@ -7,18 +7,18 @@
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        ///// <summary>
-        ///// Clean up any resources being used.
-        ///// </summary>
-        ///// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        ////protected override void Dispose(bool disposing)
-        ////{
-        ////    if (disposing && (components != null))
-        ////    {
-        ////        components.Dispose();
-        ////    }
-        ////    base.Dispose(disposing);
-        ////}
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
         #region Windows Form Designer generated code
 
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
             this.btnSmtp = new System.Windows.Forms.Button();
@@ -39,7 +40,12 @@
             this._ucUsers1 = new ShScheduler._ucUsers();
             this._ucTriggers1 = new ShScheduler._ucTriggers();
             this._ucJobs1 = new ShScheduler._ucJobs();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.toolStripMenuItemShow = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuIExit = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -174,6 +180,34 @@
             this._ucJobs1.Size = new System.Drawing.Size(693, 471);
             this._ucJobs1.TabIndex = 9;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Text = "Scheduler";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripMenuItemShow,
+            this.toolStripMenuIExit});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // toolStripMenuItemShow
+            // 
+            this.toolStripMenuItemShow.Name = "toolStripMenuItemShow";
+            this.toolStripMenuItemShow.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemShow.Text = "Show";
+            this.toolStripMenuItemShow.Click += new System.EventHandler(this.toolStripMenuItemShow_Click);
+            // 
+            // toolStripMenuIExit
+            // 
+            this.toolStripMenuIExit.Name = "toolStripMenuIExit";
+            this.toolStripMenuIExit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuIExit.Text = "Exit";
+            this.toolStripMenuIExit.Click += new System.EventHandler(this.toolStripMenuIExit_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,11 +220,15 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Scheduler";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.SizeChanged += new System.EventHandler(this.MainForm_SizeChanged);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -207,6 +245,10 @@
         private System.Windows.Forms.Button btnSmtp;
         private System.Windows.Forms.Button btnUsers;
         private _ucUsers _ucUsers1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShow;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuIExit;
     }
 }
 
