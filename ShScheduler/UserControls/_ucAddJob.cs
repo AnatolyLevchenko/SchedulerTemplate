@@ -30,7 +30,7 @@ namespace ShScheduler.UserControls
             IJobDetail helloJob = JobBuilder.Create<HelloJob>()
                 .WithIdentity(txtJobName.Text)
                 .WithDescription(txtJobDescription.Text)
-                .RequestRecovery(true)
+                .RequestRecovery(false)
                 .StoreDurably(true)
                 .Build();
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using ShData;
 using ShScheduler.Scheduler;
@@ -12,16 +13,19 @@ namespace ShScheduler
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[]args)
         {
-            var mutex = new System.Threading.Mutex(true, "7B699925 - 52CB - 4B55 - BDA6 - 5FD1C8BD4291", out var instance);
-
-            if (!instance)
+            if (!args.Any())
             {
-                MessageBox.Show("Another instance of application is already running.");
-                return;
+                var mutex = new System.Threading.Mutex(true, "7B699925 - 52CB - 4B55 - BDA6 - 5FD1C8BD4291", out var instance);
+
+                if (!instance)
+                {
+                    MessageBox.Show("Another instance of application is already running.");
+                    return;
+                }
+                GC.KeepAlive(mutex);
             }
-            GC.KeepAlive(mutex);
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

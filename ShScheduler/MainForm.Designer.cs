@@ -44,6 +44,7 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripMenuItemShow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuIExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnUsers);
             this.panel1.Controls.Add(this.btnSmtp);
             this.panel1.Controls.Add(this.lbUser);
@@ -123,7 +125,7 @@
             this.btnLogOut.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnLogOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogOut.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnLogOut.Location = new System.Drawing.Point(3, 432);
+            this.btnLogOut.Location = new System.Drawing.Point(3, 416);
             this.btnLogOut.Name = "btnLogOut";
             this.btnLogOut.Size = new System.Drawing.Size(88, 37);
             this.btnLogOut.TabIndex = 2;
@@ -192,21 +194,35 @@
             this.toolStripMenuItemShow,
             this.toolStripMenuIExit});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 48);
             // 
             // toolStripMenuItemShow
             // 
             this.toolStripMenuItemShow.Name = "toolStripMenuItemShow";
-            this.toolStripMenuItemShow.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItemShow.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuItemShow.Text = "Show";
             this.toolStripMenuItemShow.Click += new System.EventHandler(this.toolStripMenuItemShow_Click);
             // 
             // toolStripMenuIExit
             // 
             this.toolStripMenuIExit.Name = "toolStripMenuIExit";
-            this.toolStripMenuIExit.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuIExit.Size = new System.Drawing.Size(103, 22);
             this.toolStripMenuIExit.Text = "Exit";
             this.toolStripMenuIExit.Click += new System.EventHandler(this.toolStripMenuIExit_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.Khaki;
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Location = new System.Drawing.Point(3, 459);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(88, 33);
+            this.btnExit.TabIndex = 7;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // MainForm
             // 
@@ -249,6 +265,7 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItemShow;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuIExit;
+        private System.Windows.Forms.Button btnExit;
     }
 }
 

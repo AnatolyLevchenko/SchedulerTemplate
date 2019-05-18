@@ -9,11 +9,8 @@ namespace ShScheduler.Scheduler
     {
         public void Execute(IJobExecutionContext context)
         {
-        
             var form = new NotificationForm(context.JobDetail,context.Trigger);
             form.ShowDialog();
-
-
         }
     }
 }

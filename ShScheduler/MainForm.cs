@@ -89,7 +89,9 @@ namespace ShScheduler
 
             Thread th = new Thread(() =>
             {
-                System.Diagnostics.Process.Start(Application.ExecutablePath);
+                Singleton.Instance.Scheduler.Standby();
+                Singleton.Instance.Scheduler.Shutdown();
+                System.Diagnostics.Process.Start(Application.ExecutablePath,"logout");
                 Application.Exit();
             }) {IsBackground = true};
             th.Start();
@@ -148,8 +150,12 @@ namespace ShScheduler
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
-            this.WindowState = FormWindowState.Minimized;
+            if (e.CloseReason != CloseReason.ApplicationExitCall)
+            {
+                e.Cancel = true;
+                this.WindowState = FormWindowState.Minimized;
+            }
+
         }
 
         private void toolStripMenuIExit_Click(object sender, EventArgs e)
@@ -163,7 +169,12 @@ namespace ShScheduler
             Singleton.Instance.Scheduler.Standby();
             Singleton.Instance.Scheduler.Shutdown();
             this.Dispose();
-            
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            toolStripMenuIExit.PerformClick();
         }
     }
 }
