@@ -41,12 +41,15 @@
             // 
             // btnAddTrigger
             // 
+            this.btnAddTrigger.BackColor = System.Drawing.Color.Khaki;
+            this.btnAddTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTrigger.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAddTrigger.Location = new System.Drawing.Point(606, 3);
             this.btnAddTrigger.Name = "btnAddTrigger";
-            this.btnAddTrigger.Size = new System.Drawing.Size(75, 23);
+            this.btnAddTrigger.Size = new System.Drawing.Size(75, 26);
             this.btnAddTrigger.TabIndex = 10;
             this.btnAddTrigger.Text = "Add Trigger";
-            this.btnAddTrigger.UseVisualStyleBackColor = true;
+            this.btnAddTrigger.UseVisualStyleBackColor = false;
             this.btnAddTrigger.Click += new System.EventHandler(this.btnAddTrigger_Click);
             // 
             // olvTriggers
@@ -112,12 +115,15 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(606, 32);
+            this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(606, 35);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 28);
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // _ucTriggers

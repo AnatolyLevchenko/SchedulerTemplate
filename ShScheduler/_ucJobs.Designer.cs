@@ -49,22 +49,28 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(607, 32);
+            this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.Location = new System.Drawing.Point(607, 37);
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 23);
+            this.btnRefresh.Size = new System.Drawing.Size(75, 29);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.Text = "Refresh";
-            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAddJob
             // 
+            this.btnAddJob.BackColor = System.Drawing.Color.Khaki;
+            this.btnAddJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddJob.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnAddJob.Location = new System.Drawing.Point(607, 3);
             this.btnAddJob.Name = "btnAddJob";
-            this.btnAddJob.Size = new System.Drawing.Size(75, 23);
+            this.btnAddJob.Size = new System.Drawing.Size(75, 28);
             this.btnAddJob.TabIndex = 7;
             this.btnAddJob.Text = "Add Job";
-            this.btnAddJob.UseVisualStyleBackColor = true;
+            this.btnAddJob.UseVisualStyleBackColor = false;
             this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
             // 
             // olvJobs

@@ -27,9 +27,9 @@ namespace ShScheduler
         private void MainForm_Load(object sender, EventArgs e)
         {
            InitGrids();
-           btnUsers.PerformClick();
+           btnShowTriggers.PerformClick();
 
-            lbUser.Text = User.Name;
+           lbUser.Text = User.Name;
         }
 
         private void InitGrids()
