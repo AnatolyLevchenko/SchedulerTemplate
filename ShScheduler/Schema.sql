@@ -201,3 +201,11 @@ CREATE TABLE "Smtp" (
 );
 
 INSERT INTO Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES ('smtp.gmail.com','baltacheck@gmail.com','Anatoliy12',587,0);
+
+CREATE TABLE "UserFeedback" (
+	"Id"	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	"JobName"	TEXT NOT NULL,
+	"TriggerName"	TEXT NOT NULL,
+	"Text"	TEXT,
+	"User" TEXT NOT NULL
+);

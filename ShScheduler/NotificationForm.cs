@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using Quartz;
 using ShData;
+using ShData.Models;
 using ShScheduler.Helpers;
 using ShScheduler.Smtp;
 using ShScheduler.ViewModels;
@@ -29,6 +30,13 @@ namespace ShScheduler
         {
             try
             {
+                DataAccess.AddFeedback(new FeedbackModel()
+                {
+                    Text = this.txtFeedback.Text,
+                    Job = this._jobDetail.Key.Name,
+                    Trigger = this._trigger.Key.Name,
+                    User = User.Name
+                });
                 Mailer.SendEmail(new EmailMessage()
                 {
                     Subject = $"Job {_jobDetail.Key.Name}",

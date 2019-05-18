@@ -15,6 +15,7 @@ namespace ShData
     public class DataAccess
     {
         private const string Salt = "SAlt@@";
+
         public static string LoadConnectionString(string id = "Default")
         {
             return ConfigurationManager.ConnectionStrings[id].ConnectionString;
@@ -22,7 +23,7 @@ namespace ShData
 
         public static void CreateSchema(string sql)
         {
-            using (IDbConnection con=new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
                 con.Execute(sql);
@@ -33,20 +34,20 @@ namespace ShData
 
         public static AuthorizedModel Authorize(string login, string password)
         {
-            using (IDbConnection con=new SQLiteConnection(LoadConnectionString()))
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
-                var model = con.Query<LoginModel>("select Id,Login,Password,Email from Users where Login=@Login", 
-                    new { login = new DbString { Value = login } }).FirstOrDefault();
-               
+                var model = con.Query<LoginModel>("select Id,Login,Password,Email from Users where Login=@Login",
+                    new {login = new DbString {Value = login}}).FirstOrDefault();
+
 
                 con.Close();
 
-                
 
-                bool authorized= model != null && CalculateMD5Hash(password).Equals(model.Password);
-                if(authorized)
-                    return new AuthorizedModel(model.Login,model.IsAdmin==1,model.Email);
+
+                bool authorized = model != null && CalculateMD5Hash(password).Equals(model.Password);
+                if (authorized)
+                    return new AuthorizedModel(model.Login, model.IsAdmin == 1, model.Email);
                 return null;
             }
         }
@@ -60,12 +61,14 @@ namespace ShData
             {
                 con.Open();
                 var user = con.Query<LoginModel>("select Login from Users where Login=@Login",
-                    new { login = new DbString { Value = model.Login } }).FirstOrDefault();
+                    new {login = new DbString {Value = model.Login}}).FirstOrDefault();
                 if (user != null)
                     throw new Exception("User already exists");
-                
-              return 1 == con.Execute(@"insert or ignore into Users (Login,Password,IsAdmin,Email) VALUES (@Login,@Password,@IsAdmin,@Email)",
-                     new { model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin,model.Email }, commandType: CommandType.Text);
+
+                return 1 == con.Execute(
+                           @"insert or ignore into Users (Login,Password,IsAdmin,Email) VALUES (@Login,@Password,@IsAdmin,@Email)",
+                           new {model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin, model.Email},
+                           commandType: CommandType.Text);
             }
 
         }
@@ -73,7 +76,7 @@ namespace ShData
         private static string CalculateMD5Hash(string input)
         {
             MD5 md5 = MD5.Create();
-            byte[] inputBytes = Encoding.Unicode.GetBytes(input+Salt);
+            byte[] inputBytes = Encoding.Unicode.GetBytes(input + Salt);
             byte[] hash = md5.ComputeHash(inputBytes);
 
             StringBuilder sb = new StringBuilder();
@@ -103,8 +106,10 @@ namespace ShData
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
-                bool result = 1 == con.Execute(@"insert or ignore into Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES (@Smtp,@Email,@Password,@Port,@EnableSsl)",
-                           new { model.Smtp, model.Email, model.Password, model.Port, model.EnableSsl }, commandType: CommandType.Text);
+                bool result = 1 == con.Execute(
+                                  @"insert or ignore into Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES (@Smtp,@Email,@Password,@Port,@EnableSsl)",
+                                  new {model.Smtp, model.Email, model.Password, model.Port, model.EnableSsl},
+                                  commandType: CommandType.Text);
                 con.Close();
                 return result;
             }
@@ -122,14 +127,14 @@ namespace ShData
             }
         }
 
-        public static bool ChangeAdmin(string login,bool admin)
+        public static bool ChangeAdmin(string login, bool admin)
         {
             using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
             {
                 con.Open();
-                var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login", 
-                    new { login = new DbString { Value = login } }).FirstOrDefault();
-                if(user==null)
+                var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
+                    new {login = new DbString {Value = login}}).FirstOrDefault();
+                if (user == null)
                     throw new Exception("User not found");
 
                 int adm = 0;
@@ -137,7 +142,7 @@ namespace ShData
                     adm = 1;
 
                 bool result = 1 == con.Execute(@"update Users SET IsAdmin=@admin where Id=@id",
-                                  new { admin=adm, user.Id}, commandType: CommandType.Text);
+                                  new {admin = adm, user.Id}, commandType: CommandType.Text);
                 con.Close();
 
                 return result;
@@ -150,17 +155,28 @@ namespace ShData
             {
                 con.Open();
                 var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
-                    new { login = new DbString { Value = login } }).FirstOrDefault();
+                    new {login = new DbString {Value = login}}).FirstOrDefault();
                 if (user == null)
                     throw new Exception("User not found");
 
 
                 bool result = 1 == con.Execute(@"update Users SET Email=@Email where Id=@id",
-                                  new { Email = value, user.Id }, commandType: CommandType.Text);
+                                  new {Email = value, user.Id}, commandType: CommandType.Text);
                 con.Close();
 
                 return result;
             }
         }
+
+        public static void AddFeedback(FeedbackModel fm)
+        {
+                using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+                {
+                    con.Open();
+                    con.Execute(@"insert into  UserFeedback(JobName,TriggerName,Text,User) VALUES(@job,@trigger,@text,@user)",
+                        new {job = fm.Job, trigger=fm.Trigger,text=fm.Text,user=fm.User}, commandType: CommandType.Text);
+                    con.Close();
+                }
+            }
+        }
     }
-}
