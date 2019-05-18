@@ -70,8 +70,6 @@ namespace ShData
 
         }
 
-
-
         private static string CalculateMD5Hash(string input)
         {
             MD5 md5 = MD5.Create();
@@ -121,6 +119,47 @@ namespace ShData
                 var users = con.Query<LoginModel>("select Login,IsAdmin,Email from Users");
                 con.Close();
                 return users.ToList();
+            }
+        }
+
+        public static bool ChangeAdmin(string login,bool admin)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login", 
+                    new { login = new DbString { Value = login } }).FirstOrDefault();
+                if(user==null)
+                    throw new Exception("User not found");
+
+                int adm = 0;
+                if (admin)
+                    adm = 1;
+
+                bool result = 1 == con.Execute(@"update Users SET IsAdmin=@admin where Id=@id",
+                                  new { admin=adm, user.Id}, commandType: CommandType.Text);
+                con.Close();
+
+                return result;
+            }
+        }
+
+        public static bool ChangeEmail(string login, string value)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
+                    new { login = new DbString { Value = login } }).FirstOrDefault();
+                if (user == null)
+                    throw new Exception("User not found");
+
+
+                bool result = 1 == con.Execute(@"update Users SET Email=@Email where Id=@id",
+                                  new { Email = value, user.Id }, commandType: CommandType.Text);
+                con.Close();
+
+                return result;
             }
         }
     }

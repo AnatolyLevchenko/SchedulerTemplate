@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShData;
+using ShData.Models;
+using ShScheduler.Utils;
 
 namespace ShScheduler
 {
@@ -27,6 +29,37 @@ namespace ShScheduler
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             FillOlv();
+        }
+
+        private void olvUsers_CellEditFinishing(object sender, BrightIdeasSoftware.CellEditEventArgs e)
+        {
+            if (e.Column.AspectName == "Admin")
+            {
+                var model=e.RowObject as LoginModel;
+                
+                bool result = (bool) e.NewValue;
+                DataAccess.ChangeAdmin(model.Login,result);
+                FillOlv();
+            }
+            if (e.Column.AspectName == "Email")
+            {
+                if (!RegexUtilities.IsValidEmail(e.NewValue.ToString()))
+                {
+                    MessageBox.Show("Not valid Email Address");
+                    e.Cancel = true;
+                }
+                else
+                {
+                    var model = e.RowObject as LoginModel;
+                    DataAccess.ChangeEmail(model.Login, e.NewValue.ToString());
+                    FillOlv();
+                }
+            }
+        }
+
+        private void olvUsers_ButtonClick(object sender, BrightIdeasSoftware.CellClickEventArgs e)
+        {
+            MessageBox.Show("not implemented yet");
         }
     }
 }

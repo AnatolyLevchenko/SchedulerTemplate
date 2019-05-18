@@ -31,8 +31,8 @@
             this.olvUsers = new BrightIdeasSoftware.ObjectListView();
             this.olvLogin = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvAdmin = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvEmail = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvChangePassword = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvEmail = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.olvUsers)).BeginInit();
             this.SuspendLayout();
@@ -41,15 +41,15 @@
             // 
             this.olvUsers.AllColumns.Add(this.olvLogin);
             this.olvUsers.AllColumns.Add(this.olvAdmin);
-            this.olvUsers.AllColumns.Add(this.olvEmail);
             this.olvUsers.AllColumns.Add(this.olvChangePassword);
+            this.olvUsers.AllColumns.Add(this.olvEmail);
             this.olvUsers.CellEditActivation = BrightIdeasSoftware.ObjectListView.CellEditActivateMode.SingleClick;
             this.olvUsers.CellEditUseWholeCell = false;
             this.olvUsers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvLogin,
             this.olvAdmin,
-            this.olvEmail,
-            this.olvChangePassword});
+            this.olvChangePassword,
+            this.olvEmail});
             this.olvUsers.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvUsers.Dock = System.Windows.Forms.DockStyle.Left;
             this.olvUsers.FullRowSelect = true;
@@ -62,6 +62,8 @@
             this.olvUsers.UseAlternatingBackColors = true;
             this.olvUsers.UseCompatibleStateImageBehavior = false;
             this.olvUsers.View = System.Windows.Forms.View.Details;
+            this.olvUsers.ButtonClick += new System.EventHandler<BrightIdeasSoftware.CellClickEventArgs>(this.olvUsers_ButtonClick);
+            this.olvUsers.CellEditFinishing += new BrightIdeasSoftware.CellEditEventHandler(this.olvUsers_CellEditFinishing);
             // 
             // olvLogin
             // 
@@ -76,19 +78,20 @@
             this.olvAdmin.Text = "Is Admin";
             this.olvAdmin.Width = 87;
             // 
-            // olvEmail
-            // 
-            this.olvEmail.AspectName = "Email";
-            this.olvEmail.Text = "Email";
-            this.olvEmail.Width = 157;
-            // 
             // olvChangePassword
             // 
             this.olvChangePassword.AspectName = "ChangePassword";
-            this.olvChangePassword.FillsFreeSpace = true;
             this.olvChangePassword.IsButton = true;
             this.olvChangePassword.Text = "Password";
             this.olvChangePassword.Width = 87;
+            // 
+            // olvEmail
+            // 
+            this.olvEmail.AspectName = "Email";
+            this.olvEmail.FillsFreeSpace = true;
+            this.olvEmail.Text = "Email";
+            this.olvEmail.Width = 190;
+            this.olvEmail.WordWrap = true;
             // 
             // btnRefresh
             // 

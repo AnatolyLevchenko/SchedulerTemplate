@@ -135,6 +135,7 @@
     <Compile Include="UserControls\_ucSmtp.Designer.cs">
       <DependentUpon>_ucSmtp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\RegexUtilities.cs" />
     <Compile Include="ViewModels\EmailMessage.cs" />
     <Compile Include="ViewModels\JobModel.cs" />
     <Compile Include="ViewModels\TriggerInfo.cs" />
