@@ -21,7 +21,7 @@ namespace ShScheduler
         public MainForm()
         {
             InitializeComponent();
-            this.notifyIcon1.Icon = Properties.Resources.timer;
+            this.notifyIcon1.Icon =this.Icon=Properties.Resources.timer;
         }
 
         private void MainForm_Load(object sender, EventArgs e)
