@@ -42,6 +42,7 @@
             this.txtTextEmail = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.cbSsl = new System.Windows.Forms.CheckBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nupPort)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,11 +117,11 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(313, 315);
+            this.btnCancel.Location = new System.Drawing.Point(313, 355);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 34);
             this.btnCancel.TabIndex = 50;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "Close";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -131,7 +132,7 @@
             this.btnSaveSmtp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveSmtp.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveSmtp.ForeColor = System.Drawing.Color.White;
-            this.btnSaveSmtp.Location = new System.Drawing.Point(18, 315);
+            this.btnSaveSmtp.Location = new System.Drawing.Point(18, 355);
             this.btnSaveSmtp.Name = "btnSaveSmtp";
             this.btnSaveSmtp.Size = new System.Drawing.Size(283, 34);
             this.btnSaveSmtp.TabIndex = 49;
@@ -153,7 +154,7 @@
             // 
             // btnTestSettings
             // 
-            this.btnTestSettings.Location = new System.Drawing.Point(313, 268);
+            this.btnTestSettings.Location = new System.Drawing.Point(322, 263);
             this.btnTestSettings.Name = "btnTestSettings";
             this.btnTestSettings.Size = new System.Drawing.Size(93, 23);
             this.btnTestSettings.TabIndex = 52;
@@ -189,11 +190,23 @@
             this.cbSsl.Text = "SSL";
             this.cbSsl.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label6.ForeColor = System.Drawing.Color.Navy;
+            this.label6.Location = new System.Drawing.Point(15, 318);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(262, 13);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "!!!Save settings and test them to verify letters are send";
+            // 
             // _ucSmtp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.cbSsl);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtTextEmail);
@@ -233,5 +246,6 @@
         private System.Windows.Forms.TextBox txtTextEmail;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cbSsl;
+        private System.Windows.Forms.Label label6;
     }
 }

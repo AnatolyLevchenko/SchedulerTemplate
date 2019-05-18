@@ -99,6 +99,18 @@ namespace ShData
             }
         }
 
+        public static bool WriteSmtp(SmtpModel model)
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                bool result = 1 == con.Execute(@"insert or ignore into Smtp (Smtp,Email,Password,Port,EnableSsl) VALUES (@Smtp,@Email,@Password,@Port,@EnableSsl)",
+                           new { model.Smtp, model.Email, model.Password, model.Port, model.EnableSsl }, commandType: CommandType.Text);
+                con.Close();
+                return result;
+            }
+        }
+
 
     }
 }

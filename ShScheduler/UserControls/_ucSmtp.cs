@@ -38,29 +38,76 @@ namespace ShScheduler.UserControls
 
         private void btnSaveSmtp_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtSmtp.Text))
+            {
+                txtSmtp.Focus();
+                return;
+            }
 
+            if (string.IsNullOrEmpty(txtEmail.Text))
+            {
+                txtEmail.Focus();
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtPass.Text))
+            {
+                txtPass.Focus();
+                return;
+            }
+
+            try
+            {
+                SmtpModel model = new SmtpModel();
+                if (cbSsl.Checked)
+                    model.EnableSsl = 1;
+                model.Email = txtEmail.Text;
+                model.Password = txtPass.Text;
+                model.Port = (int)nupPort.Value;
+                model.Smtp = txtSmtp.Text;
+
+                bool result = DataAccess.WriteSmtp(model);
+
+                if(result)
+                    MessageHelper.DisplayDone("Succesfully saved");
+                else MessageHelper.DisplayError("Can't save settings");
+                
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
         }
 
         private void btnTestSettings_Click(object sender, EventArgs e)
         {
-            SmtpModel model = new SmtpModel
+            if (string.IsNullOrEmpty(txtTextEmail.Text))
             {
-                Email = txtEmail.Text,
-                Password = txtPass.Text,
-                Port = Convert.ToInt32(nupPort.Value)
-            };
+                MessageHelper.DisplayError("Fill e-mail address");
+                txtTextEmail.Focus();
+                return;
+            }
 
-            Mailer.SendEmail(new EmailMessage()
+            try
             {
-                Body = "This is a test message",
-                Subject = "Test",
-                From = "Scheduler",
-                FromEmail = smtp.Email,
-                To = "You",
-                ToEmail = txtTextEmail.Text
-            });
+                Mailer.SendEmail(new EmailMessage()
+                {
+                    Body = "This is a test message",
+                    Subject = "Test",
+                    From = "Scheduler",
+                    FromEmail = smtp.Email,
+                    To = "You",
+                    ToEmail = txtTextEmail.Text
+                });
 
-            MessageHelper.DisplayDone("Sent");
+                MessageHelper.DisplayDone("Sent");
+            }
+            catch (Exception exception)
+            {
+               MessageHelper.DisplayError(exception.Message);
+            }
+            
         }
     }
 }
