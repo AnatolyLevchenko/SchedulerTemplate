@@ -184,10 +184,11 @@ CREATE TABLE "Users" (
 	"Id"	INTEGER PRIMARY KEY AUTOINCREMENT,
 	"Login"	TEXT NOT NULL UNIQUE,
 	"Password"	TEXT NOT NULL,
-	"IsAdmin"	INTEGER
+	"IsAdmin"	INTEGER,
+	"Email"	TEXT
 );
 
-INSERT INTO Users (Login,Password,IsAdmin) VALUES ('root','F24032D92F12487AC93331E7E6A65502',1);
+INSERT INTO Users (Login,Password,IsAdmin,Email) VALUES ('root','F24032D92F12487AC93331E7E6A65502',1,'baltacheck@gmail.com');
 
 
 CREATE TABLE "Smtp" (

@@ -21,7 +21,7 @@ namespace ShScheduler.UserControls
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            LoginModel model = new LoginModel(txtLogin.Text, txtPassword.Text, cbAdmin.Checked);
+            LoginModel model = new LoginModel(txtLogin.Text, txtPassword.Text, cbAdmin.Checked,txtEmail.Text);
 
             try
             {

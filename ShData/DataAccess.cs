@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -63,8 +64,8 @@ namespace ShData
                 if (user != null)
                     throw new Exception("User already exists");
                 
-              return 1 == con.Execute(@"insert or ignore into Users (Login,Password,IsAdmin) VALUES (@Login,@Password,@IsAdmin)",
-                     new { model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin }, commandType: CommandType.Text);
+              return 1 == con.Execute(@"insert or ignore into Users (Login,Password,IsAdmin,Email) VALUES (@Login,@Password,@IsAdmin,@Email)",
+                     new { model.Login, Password = CalculateMD5Hash(model.Password), model.IsAdmin,model.Email }, commandType: CommandType.Text);
             }
 
         }
@@ -112,5 +113,15 @@ namespace ShData
         }
 
 
+        public static List<LoginModel> ReadAllUsers()
+        {
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+                var users = con.Query<LoginModel>("select Login,IsAdmin,Email from Users");
+                con.Close();
+                return users.ToList();
+            }
+        }
     }
 }

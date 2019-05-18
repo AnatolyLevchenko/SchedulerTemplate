@@ -150,6 +150,12 @@
     <Compile Include="_ucTriggers.Designer.cs">
       <DependentUpon>_ucTriggers.cs</DependentUpon>
     </Compile>
+    <Compile Include="_ucUsers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="_ucUsers.Designer.cs">
+      <DependentUpon>_ucUsers.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Additional\CronControl.resx">
       <DependentUpon>CronControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="_ucTriggers.resx">
       <DependentUpon>_ucTriggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ucUsers.resx">
+      <DependentUpon>_ucUsers.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="job_scheduling_data_2_0.xsd">
       <SubType>Designer</SubType>

@@ -25,7 +25,7 @@ namespace ShScheduler
         private void MainForm_Load(object sender, EventArgs e)
         {
            InitGrids();
-           btnShowTriggers.PerformClick();
+           btnUsers.PerformClick();
 
             lbUser.Text = User.Name;
         }
@@ -34,6 +34,7 @@ namespace ShScheduler
         {
             _ucJobs1.FillOlv();
             _ucTriggers1.FillOlv();
+            _ucUsers1.FillOlv();
         }
 
         protected override void Dispose(bool disposing)
@@ -50,14 +51,14 @@ namespace ShScheduler
         {
             _ucJobs1.Visible = true;
             _ucJobs1.BringToFront();
-            _ucTriggers1.Visible = false;
+            _ucTriggers1.Visible=_ucUsers1.Visible = false;
             ChangeBackColor(sender);
         }
 
         private void btnShowTriggers_Click(object sender, EventArgs e)
         {
             _ucTriggers1.BringToFront();
-            _ucJobs1.Visible = false;
+            _ucJobs1.Visible =_ucUsers1.Visible= false;
             _ucTriggers1.Visible = true;
 
             ChangeBackColor(sender);
@@ -117,6 +118,16 @@ namespace ShScheduler
                 }
 
             }
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            _ucUsers1.BringToFront();
+            _ucJobs1.Visible = false;
+            _ucTriggers1.Visible = false;
+            _ucUsers1.Visible = true;
+
+            ChangeBackColor(sender);
         }
     }
 }
