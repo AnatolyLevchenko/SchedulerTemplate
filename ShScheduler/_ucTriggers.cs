@@ -43,7 +43,7 @@ namespace ShScheduler
                 }
                 catch (Exception exception)
                 {
-                    Logger.LogException(exception.Message, exception);
+                    Logger.LogException(System.Reflection.MethodBase.GetCurrentMethod().Name, exception);
                     MessageBox.Show(exception.Message);
                 }
                 finally

@@ -100,6 +100,18 @@ namespace ShScheduler.Scheduler
 
         }
 
+        public static void RemoveTrigger(this IScheduler scheduler, string triggerName)
+        {
+            var trigger = scheduler.GetTriggerKeys(GroupMatcher<TriggerKey>.AnyGroup()).FirstOrDefault(t => t.Name.Equals(triggerName));
+            if (trigger == null)
+            {
+                throw new Exception("trigger not found");
+            }
+
+            scheduler.UnscheduleJob(trigger);
+        }
+
+
         public static void TryCloseFrom(this UserControl uc)
         {
             Form tmp = uc.FindForm();

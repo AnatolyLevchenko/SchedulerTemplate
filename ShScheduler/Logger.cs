@@ -6,6 +6,11 @@ namespace ShScheduler
     {
         private static ILog _log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+        public static ILog GetLoggerInternal(Type type)
+        {
+            return LogManager.GetLogger(type);
+        }
+
         public static void LogInfo(string message)
         {
             _log.Info(message);
@@ -13,7 +18,8 @@ namespace ShScheduler
 
         public static void LogException(string message,Exception exc)
         {
-            _log.Error(message,exc);
+            ILog logger = GetLoggerInternal(typeof(Logger));
+            logger.Error(message, exc);
         }
     }
 }
