@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ShScheduler.Properties;
 using ShScheduler.Scheduler;
 using ShScheduler.UserControls;
 
@@ -10,6 +11,12 @@ namespace ShScheduler
         public _ucJobs()
         {
             InitializeComponent();
+            olvName.ImageGetter+=ImageGetter;
+        }
+
+        private object ImageGetter(object rowobject)
+        {
+            return Resources.task;
         }
 
         private void btnAddJob_Click(object sender, EventArgs e)

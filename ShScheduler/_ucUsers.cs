@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ShData;
 using ShData.Models;
+using ShScheduler.Properties;
 using ShScheduler.Utils;
 
 namespace ShScheduler
@@ -18,6 +19,12 @@ namespace ShScheduler
         public _ucUsers()
         {
             InitializeComponent();
+            olvLogin.ImageGetter+=ImageGetter;
+        }
+
+        private object ImageGetter(object rowobject)
+        {
+            return Resources.user;
         }
 
         public void FillOlv()

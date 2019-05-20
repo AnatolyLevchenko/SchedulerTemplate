@@ -171,6 +171,7 @@ namespace ShScheduler
             Singleton.Instance.Scheduler.Shutdown();
             this.Dispose();
 
+
         }
 
         private void btnExit_Click(object sender, EventArgs e)

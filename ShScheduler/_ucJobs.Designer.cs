@@ -89,6 +89,7 @@
             this.olvJobs.FullRowSelect = true;
             this.olvJobs.Location = new System.Drawing.Point(0, 0);
             this.olvJobs.Name = "olvJobs";
+            this.olvJobs.RowHeight = 65;
             this.olvJobs.Scrollable = false;
             this.olvJobs.ShowGroups = false;
             this.olvJobs.ShowItemToolTips = true;
