@@ -51,5 +51,10 @@ namespace ShScheduler
                MessageHelper.DisplayError(exception.Message);
             }
         }
+
+        private void NotificationForm_Load(object sender, EventArgs e)
+        {
+            PInvoker.SetForegroundWindow(this.Handle);
+        }
     }
 }
