@@ -92,6 +92,7 @@
     </Compile>
     <Compile Include="Helpers\MessageHelper.cs" />
     <Compile Include="Helpers\PInvoker.cs" />
+    <Compile Include="Helpers\RuntimeLocalize.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +118,7 @@
     <Compile Include="Scheduler\HelloJob.cs" />
     <Compile Include="Scheduler\SchedulerInstance.cs" />
     <Compile Include="Smtp\Mailer.cs" />
+    <Compile Include="Translation\Language.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControls\_ucAddJob.cs">
       <SubType>UserControl</SubType>
@@ -175,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForm.resx">
       <DependentUpon>DialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.fr.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.fr.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -249,6 +257,9 @@
     <None Include="Resources\timer.ico" />
     <None Include="Resources\task.png" />
     <None Include="Resources\user.png" />
+    <None Include="Resources\uk.png" />
+    <None Include="Resources\france.png" />
+    <None Include="Resources\french.png" />
     <Content Include="Schema.sql">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

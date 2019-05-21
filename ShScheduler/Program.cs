@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 using ShData;
+using ShScheduler.Properties;
 using ShScheduler.Scheduler;
+using ShScheduler.Translation;
 
 namespace ShScheduler
 {
@@ -42,6 +45,9 @@ namespace ShScheduler
 
             if (result == DialogResult.OK)
             {
+                CultureInfo.DefaultThreadCurrentUICulture = Language.GetLanguage(Settings.Default.Language);
+                CultureInfo.DefaultThreadCurrentCulture = Language.GetLanguage(Settings.Default.Language);
+
                 var name = Singleton.Instance.Scheduler.SchedulerName;
                 Logger.LogInfo($"Scheduler with name {name} was started");
                 Application.Run(new MainForm());

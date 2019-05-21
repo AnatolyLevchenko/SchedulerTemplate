@@ -165,7 +165,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDQAACw0B7QfALAAAGslJREFUeF7tnV2MVWWW
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDAAACwwBP0AiyAAAGslJREFUeF7tnV2MVWWW
         hkFAEAFFURBQRPnVkpKRhDaAnTGNGGcUQUQ7GrEr/k2Lmhk13dMzKiHOmDbdMdoaeozS8WLonjDxp6dH
         UYNkDEaliY1tK5Y/V17ojTfqhV4569nu9/Sqr9Y+dar2PrvsPmcnb6rO2nt/a633fb9v73PqnFNjvv76
         6y46GGGwi85BGOyicxAGu+gchMEuOgdhsIvOQRjsonMQBrvoHITBLjoHYbCLzkEY7KJzEAa76ByEwS46
@@ -283,19 +283,50 @@
         vh7z/7SS4+lnCGNvAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="BtnLogin.Text" xml:space="preserve">
-    <value>Login</value>
-  </data>
-  <data name="lbRemember.Text" xml:space="preserve">
-    <value>Remember me</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 19</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Login</value>
+    <value>Nom d'utilisateur:</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>226, 26</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Please Log In First</value>
+    <value>Merci de vous connecter</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 19</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Password</value>
+    <value>Mot de passe</value>
+  </data>
+  <data name="BtnLogin.Text" xml:space="preserve">
+    <value>Connexion</value>
+  </data>
+  <data name="lbRemember.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 19</value>
+  </data>
+  <data name="lbRemember.Text" xml:space="preserve">
+    <value>Mémoriser mes informations</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnEn.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnEn.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Candara, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btnEn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 33</value>
+  </data>
+  <data name="btnFr.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnFr.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Candara, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btnFr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 33</value>
   </data>
 </root>

@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using ShData;
 using ShScheduler.Helpers;
 using ShScheduler.Properties;
+using ShScheduler.Translation;
 
 namespace ShScheduler
 {
@@ -22,6 +23,8 @@ namespace ShScheduler
             panel1.MouseDown += LoginForm_MouseDown;
             panel1.MouseMove += LoginForm_MouseMove;
             panel1.MouseUp += LoginForm_MouseUp;
+
+            RuntimeLocalize.ChangeCulture(this, Language.GetLanguage(Settings.Default.Language));
         }
 
         private void LoginForm_MouseUp(object sender, MouseEventArgs e)
@@ -122,6 +125,9 @@ namespace ShScheduler
                     SaveToSetting(txtLogin.Text, txtPass.Text);
 
                 Settings.Default.LastLoggedUser = txtLogin.Text;
+
+
+
                 Settings.Default.Save();
                 DialogResult = DialogResult.OK;
 
@@ -139,6 +145,21 @@ namespace ShScheduler
         private void lbRemember_Click(object sender, EventArgs e)
         {
             cbRememberMe.Checked = !cbRememberMe.Checked;
+        }
+
+        private void btnEn_Click(object sender, EventArgs e)
+        {
+            if (sender == btnFr)
+            {
+                RuntimeLocalize.ChangeCulture(this, Language.GetLanguage(1));
+                Settings.Default.Language = 1;
+            }
+
+            else
+            {
+                RuntimeLocalize.ChangeCulture(this, Language.GetLanguage(0));
+                Settings.Default.Language = 0;
+            }
         }
     }
 }

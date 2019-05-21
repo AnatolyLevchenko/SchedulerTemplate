@@ -43,6 +43,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.cbRememberMe = new System.Windows.Forms.CheckBox();
             this.lbRemember = new System.Windows.Forms.Label();
+            this.btnEn = new System.Windows.Forms.Button();
+            this.btnFr = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -204,12 +206,48 @@
             this.lbRemember.Text = "Remember me";
             this.lbRemember.Click += new System.EventHandler(this.lbRemember_Click);
             // 
+            // btnEn
+            // 
+            this.btnEn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnEn.FlatAppearance.BorderSize = 0;
+            this.btnEn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnEn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnEn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEn.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEn.ForeColor = System.Drawing.Color.White;
+            this.btnEn.Image = global::ShScheduler.Properties.Resources.uk;
+            this.btnEn.Location = new System.Drawing.Point(27, 118);
+            this.btnEn.Name = "btnEn";
+            this.btnEn.Size = new System.Drawing.Size(44, 33);
+            this.btnEn.TabIndex = 12;
+            this.btnEn.UseVisualStyleBackColor = false;
+            this.btnEn.Click += new System.EventHandler(this.btnEn_Click);
+            // 
+            // btnFr
+            // 
+            this.btnFr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
+            this.btnFr.FlatAppearance.BorderSize = 0;
+            this.btnFr.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btnFr.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
+            this.btnFr.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFr.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFr.ForeColor = System.Drawing.Color.White;
+            this.btnFr.Image = global::ShScheduler.Properties.Resources.french;
+            this.btnFr.Location = new System.Drawing.Point(77, 118);
+            this.btnFr.Name = "btnFr";
+            this.btnFr.Size = new System.Drawing.Size(52, 33);
+            this.btnFr.TabIndex = 13;
+            this.btnFr.UseVisualStyleBackColor = false;
+            this.btnFr.Click += new System.EventHandler(this.btnEn_Click);
+            // 
             // LoginForm
             // 
             this.AcceptButton = this.BtnLogin;
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(974, 549);
+            this.Controls.Add(this.btnFr);
+            this.Controls.Add(this.btnEn);
             this.Controls.Add(this.lbRemember);
             this.Controls.Add(this.cbRememberMe);
             this.Controls.Add(this.BtnLogin);
@@ -252,5 +290,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.CheckBox cbRememberMe;
         private System.Windows.Forms.Label lbRemember;
+        private System.Windows.Forms.Button btnEn;
+        private System.Windows.Forms.Button btnFr;
     }
 }
