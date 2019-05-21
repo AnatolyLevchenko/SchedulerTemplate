@@ -156,4 +156,19 @@
   <data name="CloseAnyOtherForms" xml:space="preserve">
     <value>Fermez le formulaire de commentaires en premier!</value>
   </data>
+  <data name="AddJob" xml:space="preserve">
+    <value>Ajouter une tâche</value>
+  </data>
+  <data name="AddTrigger" xml:space="preserve">
+    <value>Ajouter un déclencheur...</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Modifier le mot de passe</value>
+  </data>
+  <data name="RegisterUser" xml:space="preserve">
+    <value>Inscrire un utilisateur</value>
+  </data>
+  <data name="SetStmp" xml:space="preserve">
+    <value>SMTP</value>
+  </data>
 </root>

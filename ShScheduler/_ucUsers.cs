@@ -69,6 +69,7 @@ namespace ShScheduler
         {
             using (DialogForm df = new DialogForm())
             {
+                df.Text = Translation.General.ChangePassword;
                 df.Height = df.Height / 2;
                 df.Text = string.Empty;
                 LoginModel model=e.Model as LoginModel;

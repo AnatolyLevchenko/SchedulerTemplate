@@ -23,6 +23,7 @@ namespace ShScheduler
         {
             using (DialogForm df = new DialogForm())
             {
+                df.Text = Translation.General.AddJob;
                 using (var trigger = new _ucAddJob())
                 {
                     df.mainPanel.Controls.Add(trigger);

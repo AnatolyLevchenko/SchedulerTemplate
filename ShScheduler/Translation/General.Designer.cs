@@ -61,6 +61,24 @@ namespace ShScheduler.Translation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add Job.
+        /// </summary>
+        internal static string AddJob {
+            get {
+                return ResourceManager.GetString("AddJob", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Trigger.
+        /// </summary>
+        internal static string AddTrigger {
+            get {
+                return ResourceManager.GetString("AddTrigger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Authorization failed.
         /// </summary>
         internal static string AuthorizationError {
@@ -84,6 +102,15 @@ namespace ShScheduler.Translation {
         internal static string CantSaveSMTP {
             get {
                 return ResourceManager.GetString("CantSaveSMTP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        internal static string ChangePassword {
+            get {
+                return ResourceManager.GetString("ChangePassword", resourceCulture);
             }
         }
         
@@ -160,11 +187,29 @@ namespace ShScheduler.Translation {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Register user.
+        /// </summary>
+        internal static string RegisterUser {
+            get {
+                return ResourceManager.GetString("RegisterUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Successfully, saved.
         /// </summary>
         internal static string Saved {
             get {
                 return ResourceManager.GetString("Saved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Set SMTP.
+        /// </summary>
+        internal static string SetStmp {
+            get {
+                return ResourceManager.GetString("SetStmp", resourceCulture);
             }
         }
         

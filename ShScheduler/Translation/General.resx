@@ -117,6 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddJob" xml:space="preserve">
+    <value>Add Job</value>
+  </data>
+  <data name="AddTrigger" xml:space="preserve">
+    <value>Add Trigger</value>
+  </data>
   <data name="AuthorizationError" xml:space="preserve">
     <value>Authorization failed</value>
   </data>
@@ -125,6 +131,9 @@
   </data>
   <data name="CantSaveSMTP" xml:space="preserve">
     <value>Can't save SMTP settings</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change password</value>
   </data>
   <data name="CloseAnyOtherForms" xml:space="preserve">
     <value>Close feedback form(s) first</value>
@@ -150,8 +159,14 @@
   <data name="Registered" xml:space="preserve">
     <value>Successfully, registered</value>
   </data>
+  <data name="RegisterUser" xml:space="preserve">
+    <value>Register user</value>
+  </data>
   <data name="Saved" xml:space="preserve">
     <value>Successfully, saved</value>
+  </data>
+  <data name="SetStmp" xml:space="preserve">
+    <value>Set SMTP</value>
   </data>
   <data name="WorksInBackground" xml:space="preserve">
     <value>Still works in background</value>

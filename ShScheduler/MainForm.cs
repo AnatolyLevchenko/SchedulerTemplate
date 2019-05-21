@@ -102,6 +102,7 @@ namespace ShScheduler
         {
             using (DialogForm df = new DialogForm())
             {
+                df.Text = Translation.General.RegisterUser;
                 using (var register = new _ucRegister())
                 {
                     df.mainPanel.Controls.Add(register);
@@ -116,6 +117,7 @@ namespace ShScheduler
         {
             using (DialogForm df = new DialogForm())
             {
+                df.Text = Translation.General.SetStmp;
                 using (var smtp = new _ucSmtp())
                 {
                     df.mainPanel.Controls.Add(smtp);
