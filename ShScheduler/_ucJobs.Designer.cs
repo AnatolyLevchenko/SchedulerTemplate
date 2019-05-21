@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_ucJobs));
             this.label1 = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.btnAddJob = new System.Windows.Forms.Button();
@@ -40,36 +41,22 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(-69, 143);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "JOBS";
             // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(607, 37);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 29);
-            this.btnRefresh.TabIndex = 8;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnAddJob
             // 
             this.btnAddJob.BackColor = System.Drawing.Color.Khaki;
-            this.btnAddJob.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddJob.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAddJob.Location = new System.Drawing.Point(607, 3);
+            resources.ApplyResources(this.btnAddJob, "btnAddJob");
             this.btnAddJob.Name = "btnAddJob";
-            this.btnAddJob.Size = new System.Drawing.Size(75, 28);
-            this.btnAddJob.TabIndex = 7;
-            this.btnAddJob.Text = "Add Job";
             this.btnAddJob.UseVisualStyleBackColor = false;
             this.btnAddJob.Click += new System.EventHandler(this.btnAddJob_Click);
             // 
@@ -85,16 +72,13 @@
             this.olvDescription,
             this.olvDurable});
             this.olvJobs.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvJobs.Dock = System.Windows.Forms.DockStyle.Left;
+            resources.ApplyResources(this.olvJobs, "olvJobs");
             this.olvJobs.FullRowSelect = true;
-            this.olvJobs.Location = new System.Drawing.Point(0, 0);
             this.olvJobs.Name = "olvJobs";
             this.olvJobs.RowHeight = 65;
             this.olvJobs.Scrollable = false;
             this.olvJobs.ShowGroups = false;
             this.olvJobs.ShowItemToolTips = true;
-            this.olvJobs.Size = new System.Drawing.Size(601, 394);
-            this.olvJobs.TabIndex = 6;
             this.olvJobs.UseAlternatingBackColors = true;
             this.olvJobs.UseCompatibleStateImageBehavior = false;
             this.olvJobs.View = System.Windows.Forms.View.Details;
@@ -104,33 +88,29 @@
             // 
             this.olvName.AspectName = "Key.Name";
             this.olvName.IsEditable = false;
-            this.olvName.Text = "Name";
-            this.olvName.Width = 245;
+            resources.ApplyResources(this.olvName, "olvName");
             // 
             // olvDescription
             // 
             this.olvDescription.AspectName = "Description";
-            this.olvDescription.Text = "Description";
-            this.olvDescription.Width = 251;
+            resources.ApplyResources(this.olvDescription, "olvDescription");
             // 
             // olvDurable
             // 
             this.olvDurable.AspectName = "Durable";
             this.olvDurable.FillsFreeSpace = true;
             this.olvDurable.IsEditable = false;
-            this.olvDurable.Text = "Durable";
-            this.olvDurable.Width = 100;
+            resources.ApplyResources(this.olvDurable, "olvDurable");
             // 
             // _ucJobs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddJob);
             this.Controls.Add(this.olvJobs);
             this.Name = "_ucJobs";
-            this.Size = new System.Drawing.Size(693, 394);
             ((System.ComponentModel.ISupportInitialize)(this.olvJobs)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

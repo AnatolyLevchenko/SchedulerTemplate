@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_ucFeedbacks));
             this.olvFeedback = new BrightIdeasSoftware.ObjectListView();
             this.olvJobName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvTriggerName = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -50,61 +51,49 @@
             this.olvText,
             this.olvUser});
             this.olvFeedback.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvFeedback.Dock = System.Windows.Forms.DockStyle.Left;
+            resources.ApplyResources(this.olvFeedback, "olvFeedback");
             this.olvFeedback.FullRowSelect = true;
-            this.olvFeedback.Location = new System.Drawing.Point(0, 0);
             this.olvFeedback.Name = "olvFeedback";
             this.olvFeedback.ShowGroups = false;
-            this.olvFeedback.Size = new System.Drawing.Size(588, 345);
-            this.olvFeedback.TabIndex = 0;
             this.olvFeedback.UseCompatibleStateImageBehavior = false;
             this.olvFeedback.View = System.Windows.Forms.View.Details;
             // 
             // olvJobName
             // 
             this.olvJobName.AspectName = "JobName";
-            this.olvJobName.Text = "Job";
-            this.olvJobName.Width = 99;
+            resources.ApplyResources(this.olvJobName, "olvJobName");
             // 
             // olvTriggerName
             // 
             this.olvTriggerName.AspectName = "TriggerName";
-            this.olvTriggerName.Text = "Trigger";
-            this.olvTriggerName.Width = 113;
+            resources.ApplyResources(this.olvTriggerName, "olvTriggerName");
             // 
             // olvText
             // 
             this.olvText.AspectName = "Text";
-            this.olvText.Text = "Feedback";
-            this.olvText.Width = 267;
+            resources.ApplyResources(this.olvText, "olvText");
             // 
             // olvUser
             // 
             this.olvUser.AspectName = "User";
             this.olvUser.FillsFreeSpace = true;
-            this.olvUser.Text = "User";
+            resources.ApplyResources(this.olvUser, "olvUser");
             // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(594, 3);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 30);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // _ucFeedbacks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.olvFeedback);
             this.Name = "_ucFeedbacks";
-            this.Size = new System.Drawing.Size(676, 345);
             ((System.ComponentModel.ISupportInitialize)(this.olvFeedback)).EndInit();
             this.ResumeLayout(false);
 

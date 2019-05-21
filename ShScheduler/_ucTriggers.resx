@@ -117,4 +117,163 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAddTrigger.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnAddTrigger.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Candara, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnAddTrigger.Location" type="System.Drawing.Point, System.Drawing">
+    <value>606, 3</value>
+  </data>
+  <data name="btnAddTrigger.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 26</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAddTrigger.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="btnAddTrigger.Text" xml:space="preserve">
+    <value>Add Trigger</value>
+  </data>
+  <data name="&gt;&gt;btnAddTrigger.Name" xml:space="preserve">
+    <value>btnAddTrigger</value>
+  </data>
+  <data name="&gt;&gt;btnAddTrigger.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddTrigger.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAddTrigger.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="olvTriggerKey.Text" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="olvTriggerKey.Width" type="System.Int32, mscorlib">
+    <value>179</value>
+  </data>
+  <data name="olvJobName.Text" xml:space="preserve">
+    <value>Job</value>
+  </data>
+  <data name="olvJobName.Width" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="olvState.Text" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="olvNextFire.Text" xml:space="preserve">
+    <value>Next Fire Time</value>
+  </data>
+  <data name="olvNextFire.Width" type="System.Int32, mscorlib">
+    <value>136</value>
+  </data>
+  <data name="olvColumnAction.Text" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="olvColumnAction.Width" type="System.Int32, mscorlib">
+    <value>124</value>
+  </data>
+  <data name="olvTriggers.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Left</value>
+  </data>
+  <data name="olvTriggers.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="olvTriggers.Size" type="System.Drawing.Size, System.Drawing">
+    <value>600, 345</value>
+  </data>
+  <data name="olvTriggers.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;olvTriggers.Name" xml:space="preserve">
+    <value>olvTriggers</value>
+  </data>
+  <data name="&gt;&gt;olvTriggers.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.ObjectListView, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvTriggers.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;olvTriggers.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnRefresh.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnRefresh.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Candara, 9.75pt, style=Bold</value>
+  </data>
+  <data name="btnRefresh.Location" type="System.Drawing.Point, System.Drawing">
+    <value>606, 35</value>
+  </data>
+  <data name="btnRefresh.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 28</value>
+  </data>
+  <data name="btnRefresh.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnRefresh.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="&gt;&gt;btnRefresh.Name" xml:space="preserve">
+    <value>btnRefresh</value>
+  </data>
+  <data name="&gt;&gt;btnRefresh.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRefresh.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnRefresh.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>688, 345</value>
+  </data>
+  <data name="&gt;&gt;olvTriggerKey.Name" xml:space="preserve">
+    <value>olvTriggerKey</value>
+  </data>
+  <data name="&gt;&gt;olvTriggerKey.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvJobName.Name" xml:space="preserve">
+    <value>olvJobName</value>
+  </data>
+  <data name="&gt;&gt;olvJobName.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvState.Name" xml:space="preserve">
+    <value>olvState</value>
+  </data>
+  <data name="&gt;&gt;olvState.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvNextFire.Name" xml:space="preserve">
+    <value>olvNextFire</value>
+  </data>
+  <data name="&gt;&gt;olvNextFire.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;olvColumnAction.Name" xml:space="preserve">
+    <value>olvColumnAction</value>
+  </data>
+  <data name="&gt;&gt;olvColumnAction.Type" xml:space="preserve">
+    <value>BrightIdeasSoftware.OLVColumn, ObjectListView, Version=2.9.1.1072, Culture=neutral, PublicKeyToken=b1c5bf581481bcd4</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>_ucTriggers</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

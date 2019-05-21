@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_ucTriggers));
             this.btnAddTrigger = new System.Windows.Forms.Button();
             this.olvTriggers = new BrightIdeasSoftware.ObjectListView();
             this.olvTriggerKey = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -42,13 +43,8 @@
             // btnAddTrigger
             // 
             this.btnAddTrigger.BackColor = System.Drawing.Color.Khaki;
-            this.btnAddTrigger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddTrigger.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnAddTrigger.Location = new System.Drawing.Point(606, 3);
+            resources.ApplyResources(this.btnAddTrigger, "btnAddTrigger");
             this.btnAddTrigger.Name = "btnAddTrigger";
-            this.btnAddTrigger.Size = new System.Drawing.Size(75, 26);
-            this.btnAddTrigger.TabIndex = 10;
-            this.btnAddTrigger.Text = "Add Trigger";
             this.btnAddTrigger.UseVisualStyleBackColor = false;
             this.btnAddTrigger.Click += new System.EventHandler(this.btnAddTrigger_Click);
             // 
@@ -67,40 +63,34 @@
             this.olvNextFire,
             this.olvColumnAction});
             this.olvTriggers.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvTriggers.Dock = System.Windows.Forms.DockStyle.Left;
+            resources.ApplyResources(this.olvTriggers, "olvTriggers");
             this.olvTriggers.FullRowSelect = true;
-            this.olvTriggers.Location = new System.Drawing.Point(0, 0);
             this.olvTriggers.Name = "olvTriggers";
             this.olvTriggers.RowHeight = 65;
             this.olvTriggers.ShowGroups = false;
-            this.olvTriggers.Size = new System.Drawing.Size(600, 345);
-            this.olvTriggers.TabIndex = 8;
             this.olvTriggers.UseCompatibleStateImageBehavior = false;
             this.olvTriggers.View = System.Windows.Forms.View.Details;
             // 
             // olvTriggerKey
             // 
             this.olvTriggerKey.AspectName = "TriggerKey";
-            this.olvTriggerKey.Text = "Trigger";
-            this.olvTriggerKey.Width = 179;
+            resources.ApplyResources(this.olvTriggerKey, "olvTriggerKey");
             this.olvTriggerKey.WordWrap = true;
             // 
             // olvJobName
             // 
             this.olvJobName.AspectName = "JobName";
-            this.olvJobName.Text = "Job";
-            this.olvJobName.Width = 93;
+            resources.ApplyResources(this.olvJobName, "olvJobName");
             // 
             // olvState
             // 
             this.olvState.AspectName = "State";
-            this.olvState.Text = "State";
+            resources.ApplyResources(this.olvState, "olvState");
             // 
             // olvNextFire
             // 
             this.olvNextFire.AspectName = "NextFireTimeUTC";
-            this.olvNextFire.Text = "Next Fire Time";
-            this.olvNextFire.Width = 136;
+            resources.ApplyResources(this.olvNextFire, "olvNextFire");
             this.olvNextFire.WordWrap = true;
             // 
             // olvColumnAction
@@ -110,31 +100,24 @@
             this.olvColumnAction.ButtonSizing = BrightIdeasSoftware.OLVColumn.ButtonSizingMode.FixedBounds;
             this.olvColumnAction.FillsFreeSpace = true;
             this.olvColumnAction.IsButton = true;
-            this.olvColumnAction.Text = "Action";
-            this.olvColumnAction.Width = 124;
+            resources.ApplyResources(this.olvColumnAction, "olvColumnAction");
             // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.Location = new System.Drawing.Point(606, 35);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(75, 28);
-            this.btnRefresh.TabIndex = 11;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // _ucTriggers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnAddTrigger);
             this.Controls.Add(this.olvTriggers);
             this.Name = "_ucTriggers";
-            this.Size = new System.Drawing.Size(688, 345);
             ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).EndInit();
             this.ResumeLayout(false);
 

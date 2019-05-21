@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(_ucUsers));
             this.olvUsers = new BrightIdeasSoftware.ObjectListView();
             this.olvLogin = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvAdmin = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
@@ -51,14 +52,11 @@
             this.olvChangePassword,
             this.olvEmail});
             this.olvUsers.Cursor = System.Windows.Forms.Cursors.Default;
-            this.olvUsers.Dock = System.Windows.Forms.DockStyle.Left;
+            resources.ApplyResources(this.olvUsers, "olvUsers");
             this.olvUsers.FullRowSelect = true;
-            this.olvUsers.Location = new System.Drawing.Point(0, 0);
             this.olvUsers.Name = "olvUsers";
             this.olvUsers.RowHeight = 65;
             this.olvUsers.ShowGroups = false;
-            this.olvUsers.Size = new System.Drawing.Size(607, 345);
-            this.olvUsers.TabIndex = 0;
             this.olvUsers.UseAlternatingBackColors = true;
             this.olvUsers.UseCompatibleStateImageBehavior = false;
             this.olvUsers.View = System.Windows.Forms.View.Details;
@@ -69,52 +67,42 @@
             // 
             this.olvLogin.AspectName = "Login";
             this.olvLogin.IsEditable = false;
-            this.olvLogin.Text = "Login";
-            this.olvLogin.Width = 125;
+            resources.ApplyResources(this.olvLogin, "olvLogin");
             // 
             // olvAdmin
             // 
             this.olvAdmin.AspectName = "Admin";
-            this.olvAdmin.Text = "Is Admin";
-            this.olvAdmin.Width = 87;
+            resources.ApplyResources(this.olvAdmin, "olvAdmin");
             // 
             // olvChangePassword
             // 
             this.olvChangePassword.AspectName = "ChangePassword";
             this.olvChangePassword.IsButton = true;
-            this.olvChangePassword.Text = "Password";
-            this.olvChangePassword.Width = 87;
+            resources.ApplyResources(this.olvChangePassword, "olvChangePassword");
             // 
             // olvEmail
             // 
             this.olvEmail.AspectName = "Email";
             this.olvEmail.FillsFreeSpace = true;
-            this.olvEmail.Text = "Email";
-            this.olvEmail.Width = 190;
+            resources.ApplyResources(this.olvEmail, "olvEmail");
             this.olvEmail.WordWrap = true;
             // 
             // btnRefresh
             // 
             this.btnRefresh.BackColor = System.Drawing.Color.Khaki;
             this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Candara", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.Location = new System.Drawing.Point(613, 3);
+            resources.ApplyResources(this.btnRefresh, "btnRefresh");
             this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(72, 34);
-            this.btnRefresh.TabIndex = 1;
-            this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // _ucUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.olvUsers);
             this.Name = "_ucUsers";
-            this.Size = new System.Drawing.Size(688, 345);
             ((System.ComponentModel.ISupportInitialize)(this.olvUsers)).EndInit();
             this.ResumeLayout(false);
 

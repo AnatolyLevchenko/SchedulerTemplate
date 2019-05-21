@@ -211,6 +211,9 @@
     <EmbeddedResource Include="UserControls\_ucAddJob.resx">
       <DependentUpon>_ucAddJob.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucAddTrigger.fr.resx">
+      <DependentUpon>_ucAddTrigger.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddTrigger.resx">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
     </EmbeddedResource>
@@ -226,14 +229,26 @@
     <EmbeddedResource Include="UserControls\_ucSmtp.resx">
       <DependentUpon>_ucSmtp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_ucFeedbacks.fr.resx">
+      <DependentUpon>_ucFeedbacks.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_ucFeedbacks.resx">
       <DependentUpon>_ucFeedbacks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ucJobs.fr.resx">
+      <DependentUpon>_ucJobs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_ucJobs.resx">
       <DependentUpon>_ucJobs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="_ucTriggers.fr.resx">
+      <DependentUpon>_ucTriggers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="_ucTriggers.resx">
       <DependentUpon>_ucTriggers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="_ucUsers.fr.resx">
+      <DependentUpon>_ucUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="_ucUsers.resx">
       <DependentUpon>_ucUsers.cs</DependentUpon>
