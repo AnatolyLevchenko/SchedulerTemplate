@@ -37,6 +37,7 @@
             this.olvNextFire = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumnAction = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.btnRefresh = new System.Windows.Forms.Button();
+            this.olvDelete = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             ((System.ComponentModel.ISupportInitialize)(this.olvTriggers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,13 +56,15 @@
             this.olvTriggers.AllColumns.Add(this.olvState);
             this.olvTriggers.AllColumns.Add(this.olvNextFire);
             this.olvTriggers.AllColumns.Add(this.olvColumnAction);
+            this.olvTriggers.AllColumns.Add(this.olvDelete);
             this.olvTriggers.CellEditUseWholeCell = false;
             this.olvTriggers.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvTriggerKey,
             this.olvJobName,
             this.olvState,
             this.olvNextFire,
-            this.olvColumnAction});
+            this.olvColumnAction,
+            this.olvDelete});
             this.olvTriggers.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.olvTriggers, "olvTriggers");
             this.olvTriggers.FullRowSelect = true;
@@ -96,9 +99,6 @@
             // olvColumnAction
             // 
             this.olvColumnAction.AspectName = "Action";
-            this.olvColumnAction.ButtonSize = new System.Drawing.Size(80, 26);
-            this.olvColumnAction.ButtonSizing = BrightIdeasSoftware.OLVColumn.ButtonSizingMode.FixedBounds;
-            this.olvColumnAction.FillsFreeSpace = true;
             this.olvColumnAction.IsButton = true;
             resources.ApplyResources(this.olvColumnAction, "olvColumnAction");
             // 
@@ -109,6 +109,12 @@
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // olvDelete
+            // 
+            this.olvDelete.AspectName = "Remove";
+            this.olvDelete.IsButton = true;
+            resources.ApplyResources(this.olvDelete, "olvDelete");
             // 
             // _ucTriggers
             // 
@@ -133,5 +139,6 @@
         private System.Windows.Forms.Button btnRefresh;
         private BrightIdeasSoftware.OLVColumn olvState;
         private BrightIdeasSoftware.OLVColumn olvColumnAction;
+        private BrightIdeasSoftware.OLVColumn olvDelete;
     }
 }

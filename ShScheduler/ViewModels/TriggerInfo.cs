@@ -16,6 +16,8 @@ namespace ShScheduler.ViewModels
             }
         }
 
+        public string Remove => "Remove";
+
         public string TriggerKey { get; set; }
         public string JobName { get; set; }
         public string State { get; set; }

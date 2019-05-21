@@ -29,27 +29,47 @@ namespace ShScheduler
         {
             if (e.Model is TriggerInfo tr)
             {
-                try
+                if (e.Column == olvColumnAction)
                 {
-                    if (tr.State.Equals(TriggerState.Normal.ToString()))
+                    try
                     {
-                        Singleton.Instance.Scheduler.PauseTrigger(tr.TriggerKey);
-                    }
-                    else
-                    {
-                        Singleton.Instance.Scheduler.ResumeTrigger(tr.TriggerKey);
-                    }
+                        if (tr.State.Equals(TriggerState.Normal.ToString()))
+                        {
+                            Singleton.Instance.Scheduler.PauseTrigger(tr.TriggerKey);
+                        }
+                        else
+                        {
+                            Singleton.Instance.Scheduler.ResumeTrigger(tr.TriggerKey);
+                        }
 
+                    }
+                    catch (Exception exception)
+                    {
+                        Logger.LogException(System.Reflection.MethodBase.GetCurrentMethod().Name, exception);
+                        MessageBox.Show(exception.Message);
+                    }
+                    finally
+                    {
+                        FillOlv();
+                    }
                 }
-                catch (Exception exception)
+
+                if (e.Column == olvDelete)
                 {
-                    Logger.LogException(System.Reflection.MethodBase.GetCurrentMethod().Name, exception);
-                    MessageBox.Show(exception.Message);
+                    try
+                    {
+                        Singleton.Instance.Scheduler.RemoveTrigger(tr.TriggerKey);
+                        Logger.LogInfo(tr.TriggerKey +" deleted");
+
+                        FillOlv();
+                    }
+                    catch (Exception exception)
+                    {
+                        Logger.LogException(System.Reflection.MethodBase.GetCurrentMethod().Name, exception);
+                        MessageBox.Show(exception.Message);
+                    }
                 }
-                finally
-                {
-                    FillOlv();
-                }
+               
             }
 
         }
