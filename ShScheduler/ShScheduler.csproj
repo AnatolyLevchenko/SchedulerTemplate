@@ -205,14 +205,23 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControls\_ucAddJob.fr.resx">
+      <DependentUpon>_ucAddJob.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddJob.resx">
       <DependentUpon>_ucAddJob.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddTrigger.resx">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucRegister.fr.resx">
+      <DependentUpon>_ucRegister.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucRegister.resx">
       <DependentUpon>_ucRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucSmtp.fr.resx">
+      <DependentUpon>_ucSmtp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucSmtp.resx">
       <DependentUpon>_ucSmtp.cs</DependentUpon>
