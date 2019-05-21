@@ -117,15 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;btnLogOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnShowTriggers.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Candara, 14.25pt, style=Bold</value>
+  </data>
   <data name="btnFeedback.Font" type="System.Drawing.Font, System.Drawing">
     <value>Candara, 14.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;btnUsers.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="_ucUsers1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>688, 471</value>
   </data>
   <data name="&gt;&gt;_ucJobs1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -180,6 +180,9 @@
   <data name="btnExit.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
+  <data name="btnShowJobs.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btnRegister.Text" xml:space="preserve">
     <value>Register</value>
   </data>
@@ -189,11 +192,14 @@
   <data name="&gt;&gt;btnRegister.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>840, 495</value>
+  </data>
+  <data name="&gt;&gt;btnSmtp.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="btnUsers.Font" type="System.Drawing.Font, System.Drawing">
     <value>Candara, 14.25pt, style=Bold</value>
-  </data>
-  <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="&gt;&gt;btnExit.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -246,20 +252,20 @@
   <data name="&gt;&gt;btnSmtp.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="btnExit.Text" xml:space="preserve">
-    <value>Exit</value>
+  <data name="&gt;&gt;btnShowTriggers.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnShowJobs.Font" type="System.Drawing.Font, System.Drawing">
     <value>Candara, 14.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btnUsers.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="_ucFeedbacks1.Size" type="System.Drawing.Size, System.Drawing">
     <value>693, 471</value>
   </data>
   <data name="lbUser.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
-  </data>
-  <data name="btnSmtp.Text" xml:space="preserve">
-    <value>SMTP</value>
   </data>
   <data name="btnUsers.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 138</value>
@@ -291,7 +297,7 @@
   <data name="&gt;&gt;lbUser.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="btnLogOut.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnShowJobs.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 37</value>
   </data>
   <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
@@ -303,14 +309,11 @@
   <data name="toolStripMenuItemShow.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
   </data>
-  <data name="toolStripMenuItemShow.Text" xml:space="preserve">
-    <value>Show</value>
+  <data name="btnFeedback.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="&gt;&gt;_ucUsers1.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="&gt;&gt;lbUser.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbUser.Name" xml:space="preserve">
     <value>lbUser</value>
@@ -333,8 +336,8 @@
   <data name="&gt;&gt;notifyIcon1.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnShowTriggers.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Candara, 14.25pt, style=Bold</value>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>Exit</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -353,9 +356,6 @@
   </data>
   <data name="toolStripMenuIExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 22</value>
-  </data>
-  <data name="btnFeedback.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
   </data>
   <data name="&gt;&gt;_ucUsers1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -384,8 +384,11 @@
   <data name="&gt;&gt;toolStripMenuItemShow.Name" xml:space="preserve">
     <value>toolStripMenuItemShow</value>
   </data>
-  <data name="btnShowJobs.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="toolStripMenuItemShow.Text" xml:space="preserve">
+    <value>Show</value>
+  </data>
+  <data name="btnSmtp.Text" xml:space="preserve">
+    <value>SMTP</value>
   </data>
   <data name="btnSmtp.Font" type="System.Drawing.Font, System.Drawing">
     <value>Candara, 14.25pt, style=Bold</value>
@@ -414,8 +417,8 @@
   <data name="btnLogOut.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btnLogOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 416</value>
+  <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="_ucJobs1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -432,9 +435,6 @@
   <data name="&gt;&gt;btnFeedback.Parent" xml:space="preserve">
     <value>panel1</value>
   </data>
-  <data name="lbUser.Text" xml:space="preserve">
-    <value>User</value>
-  </data>
   <data name="btnLogOut.Text" xml:space="preserve">
     <value>Log Out</value>
   </data>
@@ -444,20 +444,23 @@
   <data name="btnUsers.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 37</value>
   </data>
+  <data name="btnLogOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 37</value>
+  </data>
   <data name="btnSmtp.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 37</value>
   </data>
   <data name="btnExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 33</value>
   </data>
+  <data name="&gt;&gt;btnLogOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btnLogOut.Font" type="System.Drawing.Font, System.Drawing">
     <value>Candara, 14.25pt, style=Bold</value>
   </data>
   <data name="btnShowJobs.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 52</value>
-  </data>
-  <data name="&gt;&gt;btnSmtp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnRegister.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -486,8 +489,8 @@
   <data name="&gt;&gt;_ucJobs1.Name" xml:space="preserve">
     <value>_ucJobs1</value>
   </data>
-  <data name="&gt;&gt;btnShowJobs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbUser.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_ucFeedbacks1.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -504,29 +507,26 @@
   <data name="&gt;&gt;contextMenuStrip1.Name" xml:space="preserve">
     <value>contextMenuStrip1</value>
   </data>
-  <data name="&gt;&gt;btnShowTriggers.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;toolStripMenuIExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>840, 495</value>
-  </data>
-  <data name="btnShowJobs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 37</value>
+  <data name="&gt;&gt;btnShowJobs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnShowTriggers.Name" xml:space="preserve">
     <value>btnShowTriggers</value>
   </data>
-  <data name="_ucUsers1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>688, 471</value>
+  <data name="&gt;&gt;btnSmtp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnSmtp.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="btnShowJobs.Text" xml:space="preserve">
     <value>Jobs</value>
+  </data>
+  <data name="btnLogOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 416</value>
   </data>
   <data name="&gt;&gt;btnExit.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -546,8 +546,8 @@
   <data name="lbUser.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;btnSmtp.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="lbUser.Text" xml:space="preserve">
+    <value>User</value>
   </data>
   <data name="&gt;&gt;btnExit.Name" xml:space="preserve">
     <value>btnExit</value>

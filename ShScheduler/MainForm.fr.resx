@@ -117,7 +117,60 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnFeedback.Text" xml:space="preserve">
+    <value>Retours</value>
+  </data>
+  <data name="btnExit.Text" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="btnUsers.Text" xml:space="preserve">
+    <value>Utilisateurs</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbUser.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 20</value>
+  </data>
+  <data name="lbUser.Text" xml:space="preserve">
+    <value>Utilisateur</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>Inscrire</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLogOut.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLogOut.Text" xml:space="preserve">
+    <value>Out</value>
+  </data>
+  <data name="btnShowTriggers.Text" xml:space="preserve">
+    <value>Déclencheurs</value>
+  </data>
   <data name="btnShowJobs.Text" xml:space="preserve">
-    <value>Jobsf</value>
+    <value>Travaux</value>
+  </data>
+  <data name="toolStripMenuItemShow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="toolStripMenuItemShow.Text" xml:space="preserve">
+    <value>Afficher</value>
+  </data>
+  <data name="toolStripMenuIExit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 22</value>
+  </data>
+  <data name="toolStripMenuIExit.Text" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="contextMenuStrip1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 48</value>
+  </data>
+  <data name="notifyIcon1.Text" xml:space="preserve">
+    <value>Planificateur</value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Planificateur</value>
   </data>
 </root>
