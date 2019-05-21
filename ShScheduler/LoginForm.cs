@@ -131,14 +131,12 @@ namespace ShScheduler
                 Settings.Default.Save();
                 DialogResult = DialogResult.OK;
 
-                //save login of user to Singleton instance
-                //LoggedUser.GetInstance(txtLogin.Text);
-
+              
 
             }
             else
             {
-                MessageHelper.DisplayError("Authorization failed");
+                MessageHelper.DisplayError(General.AuthorizationError);
             }
         }
 

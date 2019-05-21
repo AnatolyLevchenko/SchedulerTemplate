@@ -93,6 +93,7 @@
             // olvDescription
             // 
             this.olvDescription.AspectName = "Description";
+            this.olvDescription.IsEditable = false;
             resources.ApplyResources(this.olvDescription, "olvDescription");
             // 
             // olvDurable

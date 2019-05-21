@@ -139,7 +139,7 @@ namespace ShScheduler
         {
             if (this.WindowState == FormWindowState.Minimized)
             {
-                notifyIcon1.BalloonTipText = "Still works in background";
+                notifyIcon1.BalloonTipText = Translation.General.WorksInBackground;
                 notifyIcon1.ShowBalloonTip(300);
             }
         }
@@ -164,7 +164,7 @@ namespace ShScheduler
             var count = Application.OpenForms.Cast<Form>().Count(x => x.Name != "MainForm");
             if (count > 0)
             {
-                MessageHelper.DisplayError("Close feedback form(s) first");
+                MessageHelper.DisplayError(Translation.General.CloseAnyOtherForms);
                 return;
             }
             Singleton.Instance.Scheduler.Standby();

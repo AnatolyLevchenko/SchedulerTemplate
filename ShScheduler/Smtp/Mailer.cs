@@ -12,7 +12,7 @@ namespace ShScheduler.Smtp
         {
             var smtp = DataAccess.ReadSmtp();
             if (smtp == null)
-                throw new Exception("You don't have any email account specified");
+                throw new Exception(Translation.General.DonthaveSmtp);
 
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Scheduler", smtp.Email));

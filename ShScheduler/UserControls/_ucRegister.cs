@@ -27,19 +27,19 @@ namespace ShScheduler.UserControls
             try
             {
                 if(!RegexUtilities.IsValidEmail(txtEmail.Text))
-                    throw new Exception("Email address is not valid");
+                    throw new Exception(Translation.General.EmailInvalid);
                 if(string.IsNullOrEmpty(txtLogin.Text))
-                    throw new Exception("Login field is required");
+                    throw new Exception(Translation.General.LoginRequired);
                 if(string.IsNullOrEmpty(txtPassword.Text))
-                    throw new Exception("Password is required");
+                    throw new Exception(Translation.General.PasswordRequired);
 
                 bool done = DataAccess.Register(model);
 
                 if(!done)
-                    throw  new Exception("Can't add user.Something wrong");
+                    throw  new Exception(Translation.General.CantRegister);
 
 
-                MessageHelper.DisplayDone("successfully registered");
+                MessageHelper.DisplayDone(Translation.General.Registered);
                 this.TryCloseFrom();
             }
             catch (Exception exception)

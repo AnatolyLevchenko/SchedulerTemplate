@@ -46,11 +46,8 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.panel1.Controls.Add(this.btnClose);
             this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(44, 445);
-            this.panel1.TabIndex = 23;
             // 
             // btnClose
             // 
@@ -58,85 +55,57 @@
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Maroon;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnClose, "btnClose");
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::ShScheduler.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(929, 12);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(33, 33);
-            this.btnClose.TabIndex = 10;
             this.btnClose.UseVisualStyleBackColor = false;
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(1145, 4);
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(43, 41);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 10;
             this.pictureBox3.TabStop = false;
             // 
             // txtFeedback
             // 
-            this.txtFeedback.Location = new System.Drawing.Point(88, 128);
-            this.txtFeedback.Multiline = true;
+            resources.ApplyResources(this.txtFeedback, "txtFeedback");
             this.txtFeedback.Name = "txtFeedback";
-            this.txtFeedback.Size = new System.Drawing.Size(400, 209);
-            this.txtFeedback.TabIndex = 24;
             // 
             // txtJobName
             // 
-            this.txtJobName.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJobName.Location = new System.Drawing.Point(88, 51);
+            resources.ApplyResources(this.txtJobName, "txtJobName");
             this.txtJobName.Name = "txtJobName";
             this.txtJobName.ReadOnly = true;
-            this.txtJobName.Size = new System.Drawing.Size(400, 31);
-            this.txtJobName.TabIndex = 26;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label1.Location = new System.Drawing.Point(85, 22);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "JobName";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
-            this.label2.Location = new System.Drawing.Point(85, 106);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 27;
-            this.label2.Text = "Feedback";
             // 
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(71)))), ((int)(((byte)(160)))));
             this.btnSend.FlatAppearance.BorderSize = 0;
             this.btnSend.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSend.Font = new System.Drawing.Font("Candara", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.btnSend, "btnSend");
             this.btnSend.ForeColor = System.Drawing.Color.White;
-            this.btnSend.Location = new System.Drawing.Point(88, 362);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(400, 34);
-            this.btnSend.TabIndex = 28;
-            this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // NotificationForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(593, 445);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtJobName);
@@ -145,8 +114,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NotificationForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Notification";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.NotificationForm_Load);
             this.panel1.ResumeLayout(false);

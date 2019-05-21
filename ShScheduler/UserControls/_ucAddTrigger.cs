@@ -34,7 +34,7 @@ namespace ShScheduler.UserControls
                 var job = cmbJobName.SelectedItem as JobModel;
 
                 if(job==null)
-                    throw new Exception("Job is required");
+                    throw new Exception(Translation.General.JobIsRequired);
 
 
                 var trigger = TriggerBuilder.Create()

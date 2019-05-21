@@ -52,7 +52,7 @@ namespace ShScheduler
             {
                 if (!RegexUtilities.IsValidEmail(e.NewValue.ToString()))
                 {
-                    MessageBox.Show("Not valid Email Address");
+                    MessageBox.Show(Translation.General.EmailInvalid);
                     e.Cancel = true;
                 }
                 else

@@ -69,8 +69,8 @@ namespace ShScheduler.UserControls
                 bool result = DataAccess.WriteSmtp(model);
 
                 if(result)
-                    MessageHelper.DisplayDone("Succesfully saved");
-                else MessageHelper.DisplayError("Can't save settings");
+                    MessageHelper.DisplayDone(Translation.General.Saved);
+                else MessageHelper.DisplayError(Translation.General.CantSaveSMTP);
                 
             }
             catch (Exception exception)
@@ -84,7 +84,7 @@ namespace ShScheduler.UserControls
         {
             if (string.IsNullOrEmpty(txtTextEmail.Text))
             {
-                MessageHelper.DisplayError("Fill e-mail address");
+                MessageHelper.DisplayError(Translation.General.EmailRequired);
                 txtTextEmail.Focus();
                 return;
             }

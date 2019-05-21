@@ -118,6 +118,11 @@
     <Compile Include="Scheduler\HelloJob.cs" />
     <Compile Include="Scheduler\SchedulerInstance.cs" />
     <Compile Include="Smtp\Mailer.cs" />
+    <Compile Include="Translation\General.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>General.resx</DependentUpon>
+    </Compile>
     <Compile Include="Translation\Language.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserControls\_ucAddJob.cs">
@@ -190,6 +195,9 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NotificationForm.fr.resx">
+      <DependentUpon>NotificationForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NotificationForm.resx">
       <DependentUpon>NotificationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -205,6 +213,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Translation\General.fr.resx" />
+    <EmbeddedResource Include="Translation\General.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>General.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddJob.fr.resx">
       <DependentUpon>_ucAddJob.cs</DependentUpon>
     </EmbeddedResource>
