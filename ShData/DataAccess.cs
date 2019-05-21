@@ -189,5 +189,26 @@ namespace ShData
                 return users.ToList();
             }
         }
+
+        public static bool ChangePassword(LoginModel model)
+        {
+
+            using (IDbConnection con = new SQLiteConnection(LoadConnectionString()))
+            {
+                con.Open();
+
+                var user = con.Query<LoginModel>("select Login,Id from Users where Login=@login",
+                    new { login = new DbString { Value = model.Login } }).FirstOrDefault();
+                if (user == null)
+                    throw new Exception("User not found");
+
+                bool result = 1 == con.Execute(@"update Users SET Password=@Password where Id=@id",
+                                  new { Password = CalculateMD5Hash(model.Password), user.Id }, commandType: CommandType.Text);
+                con.Close();
+
+                return result;
+
+            }
+        }
     }
 }

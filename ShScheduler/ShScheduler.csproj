@@ -137,6 +137,12 @@
     <Compile Include="UserControls\_ucAddTrigger.Designer.cs">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\_ucChangePass.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\_ucChangePass.Designer.cs">
+      <DependentUpon>_ucChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\_ucRegister.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -229,6 +235,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucAddTrigger.resx">
       <DependentUpon>_ucAddTrigger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\_ucChangePass.resx">
+      <DependentUpon>_ucChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\_ucRegister.fr.resx">
       <DependentUpon>_ucRegister.cs</DependentUpon>

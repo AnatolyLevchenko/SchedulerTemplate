@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ShData;
 using ShData.Models;
 using ShScheduler.Properties;
+using ShScheduler.UserControls;
 using ShScheduler.Utils;
 
 namespace ShScheduler
@@ -66,7 +67,18 @@ namespace ShScheduler
 
         private void olvUsers_ButtonClick(object sender, BrightIdeasSoftware.CellClickEventArgs e)
         {
-            MessageBox.Show("not implemented yet");
+            using (DialogForm df = new DialogForm())
+            {
+                df.Height = df.Height / 2;
+                df.Text = string.Empty;
+                LoginModel model=e.Model as LoginModel;
+                using (var pass = new _ucChangePass(model.Login))
+                {
+                    df.mainPanel.Controls.Add(pass);
+                    df.ShowDialog();
+                }
+
+            }
         }
     }
 }
